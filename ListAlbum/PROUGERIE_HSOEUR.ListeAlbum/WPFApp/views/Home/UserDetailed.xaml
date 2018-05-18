@@ -6,7 +6,27 @@
              xmlns:local="clr-namespace:WPFApp.views.Home"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="#FF424B46">
-        
-    </Grid>
+    <StackPanel>
+        <Grid HorizontalAlignment="Left" x:Name="grid1" ShowGridLines="true" Width="800" Background="Magenta"  Height="129">
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="87*"/>
+                <ColumnDefinition Width="313*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.ColumnSpan="2">
+                <TextBlock></TextBlock>
+            </StackPanel>
+        </Grid>
+        <ScrollViewer>
+            <ListBox x:Name="listBox" Height="238" Background="#FFB4A7D6"/>
+        </ScrollViewer>
+        <Grid HorizontalAlignment="Left" x:Name="grid2" ShowGridLines="true" Width="800" Background="#FF4C297E"  Height="176">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="87*"/>
+                <ColumnDefinition Width="313*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="button" Content="Gerer ma Playlist" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Height="87" Background="#FF674EA7"/>
+            <Button x:Name="button1" Content="Ajouter un morceau" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="626" Height="87" Click="button1_Click" Background="#FFF1C232"/>
+        </Grid>
+    </StackPanel>
 </UserControl>
