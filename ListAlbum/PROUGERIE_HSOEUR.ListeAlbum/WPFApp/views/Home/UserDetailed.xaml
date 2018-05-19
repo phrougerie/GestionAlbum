@@ -1,0 +1,31 @@
+﻿<UserControl x:Name="UserAlbums" x:Class="WPFApp.views.Home.UserDetailed"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFApp.views.Home"
+             mc:Ignorable="d" Width="760" Height="373">
+    <StackPanel x:Name="stack1" >
+        <Grid Height="100" Background="#FF5941C9"/>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto">
+            <ListBox  x:Name="AlbumListBox" Background="#FF377C56" FontFamily="ArialBlack" FontSize="16" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <!--<TextBlock Text="{Binding Title}"/>  -->
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0} {1}">
+                                    <Binding Path="Title"/>
+                                    <Binding Path="Artist"/>
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
+
+        </ListBox>
+        <Grid Height="200" Background="#FF9B3838"/>
+    </StackPanel>
+</UserControl>
