@@ -6,16 +6,16 @@
         xmlns:local="clr-namespace:WPFApp.views"
         xmlns:Home="clr-namespace:WPFApp.views.Home" x:Class="WPFApp.views.HomeWindow"
         mc:Ignorable="d"
-        Title="HomeWindow" Width="1212.562" Height="821.208">
-    <Grid x:Name="PrincipalGrid" ShowGridLines="true">
+        Title="HomeWindow" Height="632.332" MinHeight="585" MinWidth="1040" Width="924.037">
+    <Grid x:Name="PrincipalGrid" ShowGridLines="true" Margin="0,0,-6.4,-0.6" MinWidth="1040" MinHeight="585">
         <Grid.ColumnDefinitions>
 
             <ColumnDefinition/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <Home:MasterUserControl  Grid.Column="0"/>
-        <Home:UserDetailed Grid.Column="1"/>
-        
+        <Home:UserDetailed Grid.Column="1" />
+
     </Grid>
 
 

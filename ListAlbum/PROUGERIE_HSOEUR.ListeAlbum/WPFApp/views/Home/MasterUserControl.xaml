@@ -4,30 +4,35 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFApp.views.Home"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
-        <TextBlock Grid.Row="1" Text="Album et atrist"/>
-        
-        <ScrollViewer HorizontalScrollBarVisibility="Auto">
-            <ListBox  x:Name="AlbumListBox" Background="#FF377C56" FontFamily="ArialBlack" FontSize="16" >
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <!--<TextBlock Text="{Binding Title}"/>  -->
-                        <TextBlock>
-                            <TextBlock.Text>
-                                <MultiBinding StringFormat="{}{0} {1}">
-                                    <Binding Path="Title"/>
-                                    <Binding Path="Artist"/>
-                                </MultiBinding>
-                            </TextBlock.Text>
-                        </TextBlock>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </ScrollViewer>
-        <Button x:Name="button" Content="Ajouter un album" Background="#FFDC2323"/>
+             mc:Ignorable="d" MinWidth="250" MinHeight="585">
+    <Grid MinHeight="585">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
 
-    </StackPanel>
-    
+        <TextBlock Grid.Row="0" Background="#FF45818E" Text="Album et atrist"/>
+
+
+        <ListBox  x:Name="AlbumListBox" Grid.Row="1" Background="#FFFFE599" FontFamily="ArialBlack" FontSize="16"  >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <!--<TextBlock Text="{Binding Title}"/>  -->
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Path="Title"/>
+                                <Binding Path="Artist"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <Button x:Name="button" Grid.Row="2" Content="Ajouter un album" Background="#FF45818E"/>
+
+    </Grid>
+
 </UserControl>
