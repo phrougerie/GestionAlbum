@@ -1,14 +1,9 @@
-<<<<<<< HEAD
 ﻿<UserControl x:Name="UserAlbums" x:Class="WPFApp.views.Home.UserDetailed"
-=======
-﻿<UserControl x:Class="WPFApp.views.Home.UserDetailed"
->>>>>>> 6182395e4cce1f710bfeebfea9188fe7eea670ff
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFApp.views.Home"
-<<<<<<< HEAD
              mc:Ignorable="d" MinWidth="790" MinHeight="585">
     <Grid x:Name="Grid1" >
         <Grid.ColumnDefinitions>
@@ -53,31 +48,4 @@
         <Button x:Name="Ajout_morceau" Content="Ajouter un nouveau morceau" Grid.Row="2" Grid.Column="1" FontFamily="Rockwell Extra Bold" FontSize="16" Foreground="#FF631616" TextOptions.TextFormattingMode="Display" Background="#FFF1C232" />
 
     </Grid>
-=======
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
-        <Grid HorizontalAlignment="Left" x:Name="grid1" ShowGridLines="true" Width="800" Background="Magenta"  Height="129">
-            <Grid.ColumnDefinitions>
-
-                <ColumnDefinition Width="87*"/>
-                <ColumnDefinition Width="313*"/>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.ColumnSpan="2">
-                <TextBlock></TextBlock>
-            </StackPanel>
-        </Grid>
-        <ScrollViewer>
-            <ListBox x:Name="listBox" Height="238" Background="#FFB4A7D6"/>
-        </ScrollViewer>
-        <Grid HorizontalAlignment="Left" x:Name="grid2" ShowGridLines="true" Width="800" Background="#FF4C297E"  Height="176">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="87*"/>
-                <ColumnDefinition Width="313*"/>
-            </Grid.ColumnDefinitions>
-            <Button x:Name="button" Content="Gerer ma Playlist" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Height="87" Background="#FF674EA7"/>
-            <Button x:Name="button1" Content="Ajouter un morceau" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="626" Height="87" Click="button1_Click" Background="#FFF1C232"/>
-        </Grid>
-    </StackPanel>
->>>>>>> 6182395e4cce1f710bfeebfea9188fe7eea670ff
 </UserControl>

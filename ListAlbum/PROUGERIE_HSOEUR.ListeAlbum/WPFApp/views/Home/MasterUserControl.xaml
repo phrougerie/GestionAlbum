@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFApp.views.Home"
-<<<<<<< HEAD
              mc:Ignorable="d" MinWidth="250" MinHeight="585">
     <Grid MinHeight="585">
         <Grid.RowDefinitions>
@@ -36,31 +35,4 @@
 
     </Grid>
 
-=======
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
-        <TextBlock Grid.Row="1" Text="Album et atrist"/>
-        <ScrollViewer>
-            <ListBox  x:Name="AlbumListBox" Background="#FF377C56" FontFamily="Arial" FontSize="16" >
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <!--<TextBlock Text="{Binding Title}"/>  -->
-                        <TextBlock>
-                            <TextBlock.Text>
-                                <MultiBinding StringFormat="{}{0} {1}">
-                                    <Binding Path="Title"/>
-                                    <Binding Path="Artist"/>
-                                </MultiBinding>
-                            </TextBlock.Text>
-                        </TextBlock>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </ScrollViewer>
-        <Button x:Name="button" Content="Ajouter un album" Background="#FFDC2323"/>
-
-    </StackPanel>
-    
->>>>>>> 6182395e4cce1f710bfeebfea9188fe7eea670ff
 </UserControl>
