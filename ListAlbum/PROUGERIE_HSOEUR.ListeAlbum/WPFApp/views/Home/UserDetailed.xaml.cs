@@ -29,10 +29,13 @@ namespace WPFApp.views.Home
         {
 
         }
+<<<<<<< HEAD
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
+=======
+>>>>>>> 6182395e4cce1f710bfeebfea9188fe7eea670ff
     }
 }

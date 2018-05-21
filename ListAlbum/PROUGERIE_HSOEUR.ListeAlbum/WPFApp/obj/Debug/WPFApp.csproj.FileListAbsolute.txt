@@ -42,6 +42,7 @@ D:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\WPFApp\obj\Debug\views\Home\UserDeta
 D:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\WPFApp\obj\Debug\WPFApp.g.resources
 D:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\WPFApp\obj\Debug\WPFApp.Properties.Resources.resources
 D:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\WPFApp\obj\Debug\WPFApp.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 G:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\WPFApp\obj\Debug\WPFApp.csprojResolveAssemblyReference.cache
 G:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\WPFApp\obj\Debug\views\HomeWindow.g.cs
 G:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\WPFApp\obj\Debug\views\Home\MasterUserControl.g.cs
@@ -65,3 +66,5 @@ G:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\WPFApp\obj\Debug\WPFApp.Properties.R
 G:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\WPFApp\obj\Debug\WPFApp.csproj.GenerateResource.cache
 G:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\WPFApp\obj\Debug\WPFApp.csproj.CoreCompileInputs.cache
 G:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\WPFApp\obj\Debug\WPFApp.csproj.CopyComplete
+=======
+>>>>>>> 6182395e4cce1f710bfeebfea9188fe7eea670ff

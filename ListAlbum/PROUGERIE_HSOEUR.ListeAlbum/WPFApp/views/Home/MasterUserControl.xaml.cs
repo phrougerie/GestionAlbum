@@ -50,6 +50,7 @@ namespace WPFApp.views.Home
             albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
             albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
             albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
+<<<<<<< HEAD
             albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
             albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
             albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
@@ -57,6 +58,8 @@ namespace WPFApp.views.Home
             albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
             albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
             albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
+=======
+>>>>>>> 6182395e4cce1f710bfeebfea9188fe7eea670ff
             AlbumListBox.ItemsSource = albums;
             this.DataContext = albums;
         }

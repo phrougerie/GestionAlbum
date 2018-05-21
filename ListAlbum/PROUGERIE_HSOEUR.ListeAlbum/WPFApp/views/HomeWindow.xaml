@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:WPFApp.views"
         xmlns:Home="clr-namespace:WPFApp.views.Home" x:Class="WPFApp.views.HomeWindow"
         mc:Ignorable="d"
+<<<<<<< HEAD
         Title="HomeWindow" Height="632.332" MinHeight="585" MinWidth="1040" Width="924.037">
     <Grid x:Name="PrincipalGrid" ShowGridLines="true" Margin="0,0,-6.4,-0.6" MinWidth="1040" MinHeight="585">
         <Grid.ColumnDefinitions>
@@ -16,6 +17,11 @@
         <Home:MasterUserControl  Grid.Column="0"/>
         <Home:UserDetailed Grid.Column="1" />
 
+=======
+        Title="HomeWindow" Width="902.542" Height="658.62">
+    <Grid>
+        <Home:MasterUserControl HorizontalAlignment="Left" VerticalAlignment="Top" Height="628"/>
+>>>>>>> 6182395e4cce1f710bfeebfea9188fe7eea670ff
     </Grid>
 
 
