@@ -1,0 +1,16 @@
+E:\c#\ListAlbum2\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.dll
+E:\c#\ListAlbum2\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.pdb
+E:\c#\ListAlbum2\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.csprojResolveAssemblyReference.cache
+E:\c#\ListAlbum2\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.dll
+E:\c#\ListAlbum2\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.pdb
+D:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.dll
+D:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.pdb
+D:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.csprojResolveAssemblyReference.cache
+D:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.dll
+D:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.pdb
+G:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.dll
+G:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.pdb
+G:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.csprojResolveAssemblyReference.cache
+G:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.csproj.CoreCompileInputs.cache
+G:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.dll
+G:\c#\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.pdb
