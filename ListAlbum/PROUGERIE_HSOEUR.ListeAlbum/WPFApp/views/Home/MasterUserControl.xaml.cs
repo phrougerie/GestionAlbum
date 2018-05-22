@@ -25,40 +25,7 @@ namespace WPFApp.views.Home
         {
             
             InitializeComponent();
-            List<Album> albums = new List<Album>();
-            albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            albums.Add(new Album("1254", "Chamoixddddddddd", "Gajaddddddddddd", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            albums.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
-            albums.Add(new Album("124575", "Chamoix", "hj", "neo lama", 2019));
-            AlbumListBox.ItemsSource = albums;
-            this.DataContext = albums;
+            
         }
     }
 }

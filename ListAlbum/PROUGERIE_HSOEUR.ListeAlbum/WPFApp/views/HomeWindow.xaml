@@ -14,7 +14,7 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <Home:MasterUserControl  Grid.Column="0"/>
-        <Home:UserDetailed Grid.Column="1" />
+        <Home:UserDetailed Grid.Column="1" Loaded="UserDetailed_Loaded" />
 
     </Grid>
 
