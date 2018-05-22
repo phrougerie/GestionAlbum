@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +11,19 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
     
     public class Album : IEnumerable<Track>
     {
+        [JsonProperty(PropertyName = "KeyAl")]
         public string KeyAlbum { get; internal set; }
+        [JsonProperty(PropertyName = "TitleAl")]
         public string Title{get; internal set;}
+        [JsonProperty(PropertyName = "TimeA")]
         public Time TimeA{ get; internal set; }
+        [JsonProperty(PropertyName = "Artist")]
         public string Artist { get; internal set; }
+        [JsonProperty(PropertyName = "Genre")]
         public string Genre { get; internal set; }
+        [JsonProperty(PropertyName = "Year")]
         public int Year { get; internal set; }
+        [JsonProperty(PropertyName = "ListTrack")]
         public List<Track> ListTrack { get; private set; }
 
         public Album(string keyAlbum,string title, string artist, string genre, int year)

@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,13 +48,14 @@
       <Project>{8f24f9fe-9cc5-4fe1-86b6-cd37ba05fa41}</Project>
       <Name>PROUGERIE_HSOEUR.ListeAlbum.models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PROUGERIE_HSOEUR.ListeAlbum.persistance\PROUGERIE_HSOEUR.ListeAlbum.persistance.csproj">
+      <Project>{5e92f672-9979-44a5-b3bf-b3016c25cfd2}</Project>
+      <Name>PROUGERIE_HSOEUR.ListeAlbum.persistance</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PROUGERIE_HSOEUR.ListeAlbum.views\PROUGERIE_HSOEUR.ListeAlbum.views.csproj">
       <Project>{7d10e651-f0c8-4235-9265-29ac1472e81f}</Project>
       <Name>PROUGERIE_HSOEUR.ListeAlbum.views</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,7 +4,7 @@ using System.IO;
 using System;
 using System.Collections.Generic;
 using LibraryALbumClass;
-using Newtonsoft.Json;
+using PROUGERIE_HSOEUR.ListeAlbum.persistance;
 
 namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
 {
@@ -26,7 +26,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
 
             _view.DisplayText("Bienvenue dans la gestion d'album !");
 
-
+            var serdes = new PersistanceJson();
             var library = new LibraryAlbum();
             var al1 = new Album("12345", "Black album", "Metallica", "Trash", 1991);
             var m1 = new Track("Nothing else matter", 5, 10, "Metallica", "Black album", "Power ballad", 1991);
@@ -82,15 +82,15 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
                         break;
                     // ok
                     case 8:
-                        Deserialize(library);
+                        serdes.Deserialize(library);
                         break;
                     //pas ok
                     case 9:
-                        Serialize(library);
+                       serdes.Serialize(library);
                         break;
                     //pas ok
                     case 10:
-                        AddTrackInList(library, playlist); // Ca ne marche pas
+                        AddTrackInList(library, playlist);
                         break;
                     case 11:
                         DisplayPlaylist(playlist);
@@ -340,35 +340,6 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
             _view.DisplayTimeList(time, hour);
 
         }
-        public void Serialize(LibraryAlbum library)
-        {
-            String fullPath = Path.Combine(Environment.CurrentDirectory, "config.json"); //pr gerer path system pas besoin de demander si / ,// ou \
-            JsonSerializer serializer = new JsonSerializer();
-
-            using (StreamWriter sw = new StreamWriter(fullPath))
-            using (JsonWriter writer = new JsonTextWriter(sw))
-            {
-
-                //serialize object directly into file stream
-
-                serializer.Serialize(writer, library);
-
-            }
-            string json = JsonConvert.SerializeObject(library);
-            _view.DisplayText(json);
-
-        }
-        private void Deserialize(LibraryAlbum library)
-        {
-            string fullPath = Path.Combine(Environment.CurrentDirectory, "config.json"); //pr gerer path system pas besoin de demander si / ,// ou \
-            using (StreamReader r = new StreamReader(fullPath))
-            {
-                string content = File.ReadAllText(fullPath);
-
-                //serialize object directly into file stream
-                List<Album> l = JsonConvert.DeserializeObject<List<Album>>(content);
-                library.ListAlbum = l;
-            }
-        }
+        
     }
 }

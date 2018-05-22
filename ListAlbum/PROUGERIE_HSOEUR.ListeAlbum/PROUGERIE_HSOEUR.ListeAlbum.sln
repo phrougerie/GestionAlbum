@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PROUGERIE_HSOEUR.ListeAlbum
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFApp", "WPFApp\WPFApp.csproj", "{8F56582C-0180-4F34-B887-1D32DA62004E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PROUGERIE_HSOEUR.ListeAlbum.persistance", "PROUGERIE_HSOEUR.ListeAlbum.persistance\PROUGERIE_HSOEUR.ListeAlbum.persistance.csproj", "{5E92F672-9979-44A5-B3BF-B3016C25CFD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8F56582C-0180-4F34-B887-1D32DA62004E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F56582C-0180-4F34-B887-1D32DA62004E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F56582C-0180-4F34-B887-1D32DA62004E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E92F672-9979-44A5-B3BF-B3016C25CFD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E92F672-9979-44A5-B3BF-B3016C25CFD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E92F672-9979-44A5-B3BF-B3016C25CFD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E92F672-9979-44A5-B3BF-B3016C25CFD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

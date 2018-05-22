@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,18 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
 {
     public class Track
     {
+        [JsonProperty(PropertyName = "Title")]
         
         public string Title { get; internal set; }
+        [JsonProperty(PropertyName = "TimeT")]
         public Time TimeT { get; internal set; }
+        [JsonProperty(PropertyName = "Artist")]
         public string Artist { get; internal set; }
+        [JsonProperty(PropertyName = "Album")]
         public string Album { get; internal set; }
+        [JsonProperty(PropertyName = "Genre")]
         public string Genre { get; internal set; }
+        [JsonProperty(PropertyName = "Year")]
         public int Year { get; internal set; }
 
 
