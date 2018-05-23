@@ -1,29 +1,25 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System.Runtime.Serialization;
+using System.ServiceModel;
 namespace PROUGERIE_HSOEUR.ListeAlbum.models
 {
-    
+    [DataContract(Name = "album")]
     public class Album : IEnumerable<Track>
     {
-        [JsonProperty(PropertyName = "KeyAl")]
+        [DataMember]
         public string KeyAlbum { get; internal set; }
-        [JsonProperty(PropertyName = "TitleAl")]
+        [DataMember]
         public string Title{get; internal set;}
-        [JsonProperty(PropertyName = "TimeA")]
+        [DataMember]
         public Time TimeA{ get; internal set; }
-        [JsonProperty(PropertyName = "Artist")]
+        [DataMember]
         public string Artist { get; internal set; }
-        [JsonProperty(PropertyName = "Genre")]
+        [DataMember]
         public string Genre { get; internal set; }
-        [JsonProperty(PropertyName = "Year")]
+        [DataMember]
         public int Year { get; internal set; }
-        [JsonProperty(PropertyName = "ListTrack")]
+        [DataMember(EmitDefaultValue = false)]
         public List<Track> ListTrack { get; private set; }
 
         public Album(string keyAlbum,string title, string artist, string genre, int year)

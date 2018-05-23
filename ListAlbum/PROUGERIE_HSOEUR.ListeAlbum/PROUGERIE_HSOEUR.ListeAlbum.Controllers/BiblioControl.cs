@@ -26,7 +26,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
 
             _view.DisplayText("Bienvenue dans la gestion d'album !");
 
-            var serdes = new PersistanceJson();
+            var serdes = new PersistanceXml();
             var library = new LibraryAlbum();
             var al1 = new Album("12345", "Black album", "Metallica", "Trash", 1991);
             var m1 = new Track("Nothing else matter", 5, 10, "Metallica", "Black album", "Power ballad", 1991);
@@ -39,8 +39,8 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
             al2.AddTrack(m3);
             al1.TimeCalculator();
             al2.TimeCalculator();
-            library.AddAlbum(al2);
-            library.AddAlbum(al1);
+            library.Add(al2);
+            library.Add(al1);
             var playlist = new Playlist();
             var aff=playlist.AddTrack("12346", "Karma Police", library);
             int hour1=0;
@@ -260,7 +260,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
             {
                 _view.DisplayText("Ajout d'album selectioné :\n");
                 Album album = _view.AskForAlbum();
-                var done=library.AddAlbum(album);
+                var done=library.Add(album);
                 do
                 {
                     Track track = _view.AskForTrack(album);

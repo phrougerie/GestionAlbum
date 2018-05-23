@@ -2,25 +2,27 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PROUGERIE_HSOEUR.ListeAlbum.models
 {
+    [DataContract(Name = "track")]
     public class Track
     {
-        [JsonProperty(PropertyName = "Title")]
-        
+
+        [DataMember]
         public string Title { get; internal set; }
-        [JsonProperty(PropertyName = "TimeT")]
+        [DataMember]
         public Time TimeT { get; internal set; }
-        [JsonProperty(PropertyName = "Artist")]
+        [DataMember]
         public string Artist { get; internal set; }
-        [JsonProperty(PropertyName = "Album")]
+        [DataMember]
         public string Album { get; internal set; }
-        [JsonProperty(PropertyName = "Genre")]
+        [DataMember]
         public string Genre { get; internal set; }
-        [JsonProperty(PropertyName = "Year")]
+        [DataMember]
         public int Year { get; internal set; }
 
 

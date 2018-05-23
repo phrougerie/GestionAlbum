@@ -3,13 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PROUGERIE_HSOEUR.ListeAlbum.models
 {
+    
     public class LibraryAlbum : IEnumerable<Album>
     {
+        
         public List<Album> ListAlbum { get; set; }
 
         public LibraryAlbum()
@@ -17,7 +20,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             ListAlbum = new List<Album>();
         }
         
-        public bool AddAlbum(Album album)
+        public bool Add(Album album)
         {
             foreach (var al in ListAlbum)
             {
@@ -184,7 +187,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             ListAlbum = new List<Album>();
             foreach (var album in l)
             {
-                AddAlbum(album);
+                Add(album);
             }
         }
 
@@ -196,7 +199,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             ListAlbum = new List<Album>();
             foreach (var album in l)
             {
-                AddAlbum(album);
+                Add(album);
             }
         }
         public void listByAlbum()
@@ -207,7 +210,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             ListAlbum = new List<Album>();
             foreach (var album in l)
             {
-                AddAlbum(album);
+                Add(album);
             }
         }
         public void listByGenre()
@@ -218,7 +221,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             ListAlbum = new List<Album>();
             foreach (var album in l)
             {
-                AddAlbum(album);
+                Add(album);
             }
         }
         public void listByYear()
@@ -229,7 +232,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             ListAlbum = new List<Album>();
             foreach (var album in l)
             {
-                AddAlbum(album);
+                Add(album);
             }
         }
 
