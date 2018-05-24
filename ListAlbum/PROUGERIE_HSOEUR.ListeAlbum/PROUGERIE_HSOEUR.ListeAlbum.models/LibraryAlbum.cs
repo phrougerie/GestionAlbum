@@ -13,14 +13,18 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
     public class LibraryAlbum : IEnumerable<Album>
     {
         
-        public List<Album> ListAlbum { get; set; }
+        public List<Album> ListAlbum { get; private set; }
 
         public LibraryAlbum()
         {
             ListAlbum = new List<Album>();
         }
+        public LibraryAlbum(List<Album> liste)
+        {
+            ListAlbum = liste;
+        }
         
-        public bool Add(Album album)
+        public bool AddAlbum(Album album)
         {
             foreach (var al in ListAlbum)
             {
@@ -187,7 +191,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             ListAlbum = new List<Album>();
             foreach (var album in l)
             {
-                Add(album);
+                AddAlbum(album);
             }
         }
 
@@ -199,7 +203,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             ListAlbum = new List<Album>();
             foreach (var album in l)
             {
-                Add(album);
+                AddAlbum(album);
             }
         }
         public void listByAlbum()
@@ -210,7 +214,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             ListAlbum = new List<Album>();
             foreach (var album in l)
             {
-                Add(album);
+                AddAlbum(album);
             }
         }
         public void listByGenre()
@@ -221,7 +225,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             ListAlbum = new List<Album>();
             foreach (var album in l)
             {
-                Add(album);
+                AddAlbum(album);
             }
         }
         public void listByYear()
@@ -232,7 +236,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             ListAlbum = new List<Album>();
             foreach (var album in l)
             {
-                Add(album);
+                AddAlbum(album);
             }
         }
 

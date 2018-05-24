@@ -1,5 +1,4 @@
 ﻿using PROUGERIE_HSOEUR.ListeAlbum.models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,10 +20,10 @@ namespace WPFApp.views
     public partial class HomeWindow : Window
     {
         public static readonly DependencyProperty AlbumProperty;
-        public Album Album
+        public LibraryAlbum TheAlbum
         {
 
-            get { return (Album)GetValue(AlbumProperty); }
+            get { return (LibraryAlbum)GetValue(AlbumProperty); }
             set { SetValue(AlbumProperty, value); }
         }
 
@@ -32,7 +31,7 @@ namespace WPFApp.views
 
         static HomeWindow()
         {
-            AlbumProperty = DependencyProperty.Register("Album", typeof(Album), typeof(HomeWindow));
+            AlbumProperty = DependencyProperty.Register("TheAlbum", typeof(LibraryAlbum), typeof(HomeWindow));
 
         }
 
@@ -41,22 +40,24 @@ namespace WPFApp.views
 
             InitializeComponent();
             LibraryAlbum listAlbums = new LibraryAlbum();
-            listAlbums.ListAlbum.Add(new Album("1254", "Cdhamoix", "Gdddaja", "neo lama", 2019));
-            listAlbums.ListAlbum.Add(new Album("1254", "Chamfoix", "Gcaja", "neo lama", 2019));
-            listAlbums.ListAlbum.Add(new Album("1254", "Chamoix", "Gaja", "neo lama", 2019));
-            listAlbums.ListAlbum.Add(new Album("1254", "Chcvamoix", "Gcaja", "neo lama", 2019));
-            listAlbums.ListAlbum.Add(new Album("1254", "Chamcoix", "Gaja", "neo lama", 2019));
-            DataContext = this;
+            listAlbums.ListAlbum.Add(new Album("12545", "Cdhamoix", "Gdddaja", "neo lama", 2019));
+            listAlbums.ListAlbum.Add(new Album("12544", "Chamfoix", "Gcaja", "neo lama", 2019));
+            listAlbums.ListAlbum.Add(new Album("12543", "Chamoix", "Gaja", "neo lama", 2019));
+            listAlbums.ListAlbum.Add(new Album("12542", "Chcvamoix", "Gcaja", "neo lama", 2019));
+            listAlbums.ListAlbum.Add(new Album("12541", "Chamcoix", "Gaja", "neo lama", 2019));
+            this.DataContext = this;
         }
         //Probleme: les binding ne fonctionnent pas
         private void MasterUserControl_Loaded(object sender, RoutedEventArgs e)
         {
-         
+
         }
 
         private void UserDetailed_Loaded(object sender, RoutedEventArgs e)
         {
 
         }
+
+       
     }
 }

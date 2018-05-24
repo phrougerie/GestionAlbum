@@ -60,13 +60,22 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="views\AddNewAlbum.xaml.cs">
+      <DependentUpon>AddNewAlbum.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\AddNewTrack.xaml.cs">
+      <DependentUpon>AddNewTrack.xaml</DependentUpon>
+    </Compile>
     <Compile Include="views\HomeWindow.xaml.cs">
       <DependentUpon>HomeWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="views\Home\MasterUserControl.xaml.cs">
+    <Compile Include="views\MasterUserControl.xaml.cs">
       <DependentUpon>MasterUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="views\Home\UserDetailed.xaml.cs">
+    <Compile Include="views\TrackListWindow.xaml.cs">
+      <DependentUpon>TrackListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\UserDetailed.xaml.cs">
       <DependentUpon>UserDetailed.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -97,15 +106,27 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="views\AddNewAlbum.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\AddNewTrack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="views\HomeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="views\Home\MasterUserControl.xaml">
+    <Page Include="views\MasterUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="views\Home\UserDetailed.xaml">
+    <Page Include="views\TrackListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\UserDetailed.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,6 +135,10 @@
     <ProjectReference Include="..\PROUGERIE_HSOEUR.ListeAlbum.models\PROUGERIE_HSOEUR.ListeAlbum.models.csproj">
       <Project>{8f24f9fe-9cc5-4fe1-86b6-cd37ba05fa41}</Project>
       <Name>PROUGERIE_HSOEUR.ListeAlbum.models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PROUGERIE_HSOEUR.ListeAlbum.persistance\PROUGERIE_HSOEUR.ListeAlbum.persistance.csproj">
+      <Project>{5e92f672-9979-44a5-b3bf-b3016c25cfd2}</Project>
+      <Name>PROUGERIE_HSOEUR.ListeAlbum.persistance</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
