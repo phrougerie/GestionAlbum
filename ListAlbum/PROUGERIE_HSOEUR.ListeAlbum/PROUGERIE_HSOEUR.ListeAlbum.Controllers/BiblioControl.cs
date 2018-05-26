@@ -13,6 +13,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
         private readonly IView _view;
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="view"></param>
         public BiblioControl(IView view)
         {
             _view = view;
@@ -20,6 +24,9 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
 
 
         
+        /// <summary>
+        /// 
+        /// </summary>
         public void Start()
         {
             int valid;
@@ -109,6 +116,12 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
             } while (valid != 14);
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="library"></param>
+        /// <returns></returns>
         private bool DisplayAlbum(string key, LibraryAlbum library)
         {
             foreach (var album in library)
@@ -123,6 +136,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="library"></param>
         private void ListBy(LibraryAlbum library)
         {
             var choice=_view.AskForNumber("1 - Trier par clé\n2 - Trier par artiste\n3 - Trier par album\n4 - Trier par genre\n5 - Trier par année");
@@ -150,6 +167,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
             DisplayListAlbum(library);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="list"></param>
         private void PlayListSorting(Playlist list)
         {
             var choice = _view.AskForNumber("1 - Trier par artiste\n2 - Trier par genre\n3 - Trier par année\n");
@@ -172,6 +193,11 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
           }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="library"></param>
+        /// <param name="playlist"></param>
         private void AddTrackInList(LibraryAlbum library, Playlist playlist)
         {
             int val1;
@@ -192,6 +218,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
             } while (val2 == 1);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="library"></param>
         private void AddTrackLib(LibraryAlbum library)
         {
             
@@ -225,6 +255,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="library"></param>
         private void DeleteTrackLib(LibraryAlbum library)
         {
             int val;
@@ -240,6 +274,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
             
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="library"></param>
         private void ViewAlbum(LibraryAlbum library)
         {
             int conf;
@@ -252,6 +290,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
             } while (conf == 1);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="library"></param>
         private void CreateAlbum(LibraryAlbum library)
         {
             int conf;
@@ -273,6 +315,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
             } while (conf == 1);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="library"></param>
         private void DeleteAlb(LibraryAlbum library)
         {
             int conf;
@@ -286,6 +332,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
                 conf = _view.AskForNumber("Voulez vous supprimer un autre album ? \t1 - Oui\t2 - Non");
             } while (conf == 1);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="library"></param>
         private void DisplayListAlbum(LibraryAlbum library)
         {
             foreach (var album in library)
@@ -295,6 +345,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="library"></param>
         private void UpdateAlbum(LibraryAlbum library)
         {
             int conf;
@@ -323,6 +377,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
                 conf = _view.AskForNumber("Voulez vous modifier autre chose ? \t1 - Oui\t2 - Non");
             } while (conf == 1);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="listTrack"></param>
         private void DisplayList(List<Track> listTrack)
         {
             foreach (var track in listTrack)
@@ -332,6 +390,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="playlist"></param>
         private void DisplayPlaylist(Playlist playlist)
         {
             DisplayList(playlist.ListTrack);

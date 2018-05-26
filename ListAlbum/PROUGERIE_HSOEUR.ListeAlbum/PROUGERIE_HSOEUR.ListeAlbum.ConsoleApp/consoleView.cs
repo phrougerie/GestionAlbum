@@ -6,6 +6,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
 {
     internal class ConsoleView : IView
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public int DisplayMenu()
         {
             DisplayText("Menu");
@@ -25,11 +29,20 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
             return number;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="textdisplay"></param>
         public void DisplayText(string textdisplay)
         {
             Console.WriteLine(textdisplay);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="textdisplay"></param>
+        /// <returns></returns>
         public int AskForNumber(string textdisplay)
         {
             int valid=1;
@@ -53,10 +66,20 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
             } while (valid==1);
             return number;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="time"></param>
+        /// <param name="hour"></param>
         public void DisplayTimeList(Time time, int hour)
         {
             Console.WriteLine("Le temps de la liste est de : " + hour + " h, " + time.Min + " m, " + time.Sec + ".");
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="textdisplay"></param>
+        /// <returns></returns>
         public string AskForString(string textdisplay)
         {
             Console.WriteLine(textdisplay);
@@ -65,6 +88,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
             return chaine;
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public Time AskForTime()
         {
             
@@ -74,6 +101,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
             return new Time(min, sec);
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public int AskForSeconds()
         {
             int sec;
@@ -99,6 +130,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
             } while (valid == 1);
             return sec;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public int AskForMinute()
         {
             int min;
@@ -117,6 +152,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
             } while (valid == 1);
             return min;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public Album AskForAlbum()
         {
             var code = AskForString("Entrez la clé unique de l'album");
@@ -129,6 +168,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ret"></param>
         public void VerifyBool(bool ret)
         {
             if(ret == true)
@@ -150,6 +193,11 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="valid"></param>
+        /// <returns></returns>
         public string AskForTheModif(int valid)
         {
             

@@ -1,0 +1,34 @@
+﻿<Window x:Class="WPFApp.views.AddNewAlbum"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApp.views"
+        mc:Ignorable="d"
+        Title="AddNewAlbum" Height="628" Width="851.105" MinWidth="851.105" MaxWidth="851.105" MinHeight="628" MaxHeight="628">
+    <StackPanel Background="Magenta">
+        <StackPanel Margin="0" Height="105" Orientation="Horizontal">
+            <TextBlock Margin="100,50,22,26"><Run Text="Entrer une clé unique de l'album"/><LineBreak/><Run/></TextBlock>
+            <TextBox TextWrapping="Wrap" Width="131" Margin="75,27,0,26" Background="#FFF1C232"/>
+            <Button  Width="192" Margin="0,73,-357,-146" Background="#FF2B78E4"/>
+        </StackPanel>
+        <StackPanel Margin="0" Height="105" Orientation="Horizontal">
+            <TextBlock Margin="100,23,0,24" Padding="0,23,0,0"><Run Text="Entrer un"/><Run Text=" nom d'album"/></TextBlock>
+            <TextBox Background="#FFF1C232" DockPanel.Dock="Left" Width="131" Height="38" Margin="146,24,0,24" />
+        </StackPanel>
+
+        <StackPanel Margin="0" Height="105" Orientation="Horizontal">
+            <TextBlock Text="Entrer un artiste ou groupe" Margin="100,44,0,0" Width="185"/>
+            <TextBox Background="#FFF1C232" Width="131" Height="38" Margin="82,26,0,27" />
+        </StackPanel>
+        <StackPanel Margin="0" Height="105" Orientation="Horizontal">
+            <TextBlock Margin="100,46,0,0"><Run Text="Entrer "/><Run Text="le genre de l'album"/></TextBlock>
+            <TextBox Background="#FFF1C232" Width="131" Height="38" Margin="129,0,0,0" />
+        </StackPanel>
+        <StackPanel Height="105" Orientation="Horizontal">
+            <TextBlock Text="Entrer l'année de paruption de l'album" Margin="100,46,0,0"/>
+            <TextBox Background="#FFF1C232" Width="131" Height="38" Margin="65,0,0,0" Padding="1" />
+        </StackPanel>
+        <Button Background="#FF2B78E4" Content="Ajouter l'&#x9;album" Height="76"/>
+    </StackPanel>
+</Window>

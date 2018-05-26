@@ -10,12 +10,17 @@ namespace LibraryALbumClass
 {
     public class Playlist : IEnumerable
     {
+       
         public List<Track> ListTrack { get; private set; }
         public Playlist()
         {
             ListTrack = new List<Track>();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator<Track> GetEnumerator()
         {
             for (int i = 0; i < ListTrack.Count; i++)
@@ -24,6 +29,10 @@ namespace LibraryALbumClass
                 //Le yield permet de simplifier considérable le Ienum
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
@@ -32,6 +41,13 @@ namespace LibraryALbumClass
 
         
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="titleT"></param>
+        /// <param name="library"></param>
+        /// <returns></returns>
         public bool AddTrack(string key, string titleT, LibraryAlbum library)
         {
             foreach (var track in ListTrack)
@@ -63,6 +79,10 @@ namespace LibraryALbumClass
             
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="track"></param>
         private void AddTrackSort(Track track)
         {
             foreach (var t in ListTrack)
@@ -76,6 +96,11 @@ namespace LibraryALbumClass
             }
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="timeHour"></param>
+        /// <returns></returns>
         public Time TimeCalculator(ref int timeHour)
         {
             int timeMin = 0;
@@ -104,6 +129,9 @@ namespace LibraryALbumClass
         }
 
         
+        /// <summary>
+        /// 
+        /// </summary>
         public void ListByArtist()
         {
             var l = from track in ListTrack
@@ -116,6 +144,9 @@ namespace LibraryALbumClass
             }
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
         public void ListByGenre()
         {
             var l = from track in ListTrack
@@ -127,6 +158,9 @@ namespace LibraryALbumClass
                 AddTrackSort(track);
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public void ListByYear()
         {
             var l = from track in ListTrack
@@ -139,6 +173,11 @@ namespace LibraryALbumClass
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             var playlist = obj as Playlist;
@@ -146,6 +185,10 @@ namespace LibraryALbumClass
                    EqualityComparer<List<Track>>.Default.Equals(ListTrack, playlist.ListTrack);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             return -1794596168 + EqualityComparer<List<Track>>.Default.GetHashCode(ListTrack);

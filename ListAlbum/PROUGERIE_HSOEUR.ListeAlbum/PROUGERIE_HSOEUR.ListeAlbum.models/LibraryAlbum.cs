@@ -13,8 +13,14 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
     public class LibraryAlbum : IEnumerable<Album>
     {
         
+        /// <summary>
+        /// 
+        /// </summary>
         public List<Album> ListAlbum { get; private set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public LibraryAlbum()
         {
             ListAlbum = new List<Album>();
@@ -24,6 +30,11 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             ListAlbum = liste;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="album"></param>
+        /// <returns></returns>
         public bool AddAlbum(Album album)
         {
             foreach (var al in ListAlbum)
@@ -39,6 +50,12 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         }
         
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="trackT"></param>
+        /// <returns></returns>
         public bool DeleteTrack(string key,string trackT)
         {
             
@@ -55,6 +72,15 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             return false;
         }
       
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="trackT"></param>
+        /// <param name="min"></param>
+        /// <param name="sec"></param>
+        /// <param name="genre"></param>
+        /// <returns></returns>
         public bool AddTrackAl(string key,string trackT,int min,int sec,string genre)
         {
             foreach (var al in ListAlbum)
@@ -69,6 +95,11 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         }
         
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public bool DeleteAlbum(string key)
         {
             foreach (var al in ListAlbum)
@@ -83,6 +114,12 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="album"></param>
+        /// <param name="title"></param>
+        /// <returns></returns>
         public bool ModifyTitle(Album album,string title)
         {
             if (title == "")
@@ -92,6 +129,13 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             album.Title = title;
             return true;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="min"></param>
+        /// <param name="sec"></param>
+        /// <returns></returns>
         public bool ModifyTime(string key, int min,int sec)
         {
             foreach (var al in ListAlbum)
@@ -107,6 +151,12 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             
             return false;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="album"></param>
+        /// <param name="artist"></param>
+        /// <returns></returns>
         public bool ModifyArtist(Album album, string artist)
         {
             if (artist == "")
@@ -117,6 +167,12 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="album"></param>
+        /// <param name="genre"></param>
+        /// <returns></returns>
         public bool ModifyGenre(Album album, string genre)
         {
             if (genre == "")
@@ -126,6 +182,12 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             album.Genre = genre;
             return true;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="year"></param>
+        /// <returns></returns>
         public bool ModifyYear(string key, int year)
         {
             foreach (var al in ListAlbum)
@@ -141,6 +203,13 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="modify"></param>
+        /// <param name="valid"></param>
+        /// <returns></returns>
         public bool ModifyAlbum(string key, string modify,int valid)
         {
             bool verify = false;
@@ -167,6 +236,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             return verify;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator<Album> GetEnumerator()
         {
             for (int i = 0; i < ListAlbum.Count; i++)
@@ -175,6 +248,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
@@ -183,6 +260,9 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         
 
         
+        /// <summary>
+        /// 
+        /// </summary>
         public void listByKey()
         {
             var l = from album in ListAlbum
@@ -195,6 +275,9 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void listByArtist()
         {
             var l = from album in ListAlbum
@@ -206,6 +289,9 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
                 AddAlbum(album);
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public void listByAlbum()
         {
             var l = from album in ListAlbum
@@ -217,6 +303,9 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
                 AddAlbum(album);
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public void listByGenre()
         {
             var l = from album in ListAlbum
@@ -228,6 +317,9 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
                 AddAlbum(album);
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public void listByYear()
         {
             var l = from album in ListAlbum
@@ -240,6 +332,11 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             var album = obj as LibraryAlbum;
@@ -247,6 +344,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
                    EqualityComparer<List<Album>>.Default.Equals(ListAlbum, album.ListAlbum);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             return -1727654344 + EqualityComparer<List<Album>>.Default.GetHashCode(ListAlbum);

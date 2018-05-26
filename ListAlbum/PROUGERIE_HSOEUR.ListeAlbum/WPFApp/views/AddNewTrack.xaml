@@ -1,0 +1,26 @@
+﻿<Window x:Class="WPFApp.views.AddNewTrack"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApp.views"
+        mc:Ignorable="d"
+        Title="AddNewTrack" Height="435.338" Width="554.136" MinWidth="554.136" MinHeight="435.338" MaxWidth="554.136" MaxHeight="435.338">
+    <StackPanel Background="Magenta">
+        <StackPanel Margin="0" Height="110" Orientation="Horizontal">
+            <TextBlock Margin="100,23,0,24" Padding="0,23,0,0" Text="Entrer le nom du morceau"/>
+            <TextBox Background="#FFF1C232" DockPanel.Dock="Left" Width="131" Height="38" Margin="112,24,0,24" />
+        </StackPanel>
+
+        <StackPanel Margin="0" Height="110" Orientation="Horizontal">
+            <TextBlock Text="Entrer le genre du morceau" Margin="100,44,0,0" Width="185"/>
+            <TextBox Background="#FFF1C232" Width="131" Height="38" Margin="64,26,0,27" />
+        </StackPanel>
+        <StackPanel Height="110" Orientation="Horizontal">
+            <TextBlock Margin="100,46,0,0" TextAlignment="Center"><Run Text="Entrer la durée du morceau"/><LineBreak/><Run Text="en secondes et minutes"/></TextBlock>
+            <TextBox Background="#FFF1C232" Width="36" Height="38" Margin="117,34,14,33" Padding="1" />
+            <TextBox Background="#FFF1C232" Width="38" Height="38" Margin="12,34,0,33" Padding="1" />
+        </StackPanel>
+        <Button Background="#FF2B78E4" Content="Ajouter l'&#x9;album" Height="75"/>
+    </StackPanel>
+</Window>

@@ -13,7 +13,12 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         [DataMember]
         public int Min {get;  set;}
         [DataMember]
-        public int Sec { get; internal set; }
+        public int Sec { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="min"></param>
+        /// <param name="sec"></param>
         public Time(int min,int sec)
         {
             Min = min;

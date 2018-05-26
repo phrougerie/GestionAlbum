@@ -8,20 +8,27 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
     public class Album : IEnumerable<Track>
     {
         [DataMember]
-        public string KeyAlbum { get; internal set; }
+        public string KeyAlbum { get; set; }
         [DataMember]
-        public string Title{get; internal set;}
+        public string Title{get; set;}
         [DataMember]
-        public Time TimeA{ get; internal set; }
+        public Time TimeA{ get; set; }
         [DataMember]
-        public string Artist { get; internal set; }
+        public string Artist { get;  set; }
         [DataMember]
-        public string Genre { get; internal set; }
+        public string Genre { get;  set; }
         [DataMember]
-        public int Year { get; internal set; }
+        public int Year { get;  set; }
+        
         [DataMember(EmitDefaultValue = false)]
         public List<Track> ListTrack { get; private set; }
 
+        
+        /// <param name="keyAlbum"></param>
+        /// <param name="title"></param>
+        /// <param name="artist"></param>
+        /// <param name="genre"></param>
+        /// <param name="year"></param>
         public Album(string keyAlbum,string title, string artist, string genre, int year)
         {
             KeyAlbum = keyAlbum;
@@ -34,6 +41,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         }
         
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator<Track> GetEnumerator()
         {
             for (int i = 0; i < ListTrack.Count; i++)
@@ -49,6 +60,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         
         
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="track"></param>
         public void EraseTrack(string track)
         {
             foreach (var thetrack in ListTrack)
@@ -62,6 +77,11 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="track"></param>
+        /// <returns></returns>
         public bool AddTrack(Track track)
         {
               foreach (var thetrack in ListTrack)
@@ -75,6 +95,9 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
               ListTrack.Add(track);
               return true;
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public void TimeCalculator()
         {
             int timeMin = 0;
@@ -98,6 +121,11 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             var album = obj as Album;
@@ -111,6 +139,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
                    EqualityComparer<List<Track>>.Default.Equals(ListTrack, album.ListTrack);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             var hashCode = -1714544371;

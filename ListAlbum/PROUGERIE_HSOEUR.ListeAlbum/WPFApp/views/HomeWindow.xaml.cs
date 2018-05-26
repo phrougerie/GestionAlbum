@@ -1,4 +1,6 @@
-﻿using PROUGERIE_HSOEUR.ListeAlbum.models;
+﻿
+using PROUGERIE_HSOEUR.ListeAlbum.models;
+using PROUGERIE_HSOEUR.ListeAlbum.persistance;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,33 +21,15 @@ namespace WPFApp.views
     /// </summary>
     public partial class HomeWindow : Window
     {
-        public static readonly DependencyProperty AlbumProperty;
-        public LibraryAlbum TheAlbum
-        {
-
-            get { return (LibraryAlbum)GetValue(AlbumProperty); }
-            set { SetValue(AlbumProperty, value); }
-        }
-
-
-
-        static HomeWindow()
-        {
-            AlbumProperty = DependencyProperty.Register("TheAlbum", typeof(LibraryAlbum), typeof(HomeWindow));
-
-        }
-
+        public LibraryAlbum LibraryAlbum { get; set; }
         public HomeWindow()
         {
-
+            
             InitializeComponent();
-            LibraryAlbum listAlbums = new LibraryAlbum();
-            listAlbums.ListAlbum.Add(new Album("12545", "Cdhamoix", "Gdddaja", "neo lama", 2019));
-            listAlbums.ListAlbum.Add(new Album("12544", "Chamfoix", "Gcaja", "neo lama", 2019));
-            listAlbums.ListAlbum.Add(new Album("12543", "Chamoix", "Gaja", "neo lama", 2019));
-            listAlbums.ListAlbum.Add(new Album("12542", "Chcvamoix", "Gcaja", "neo lama", 2019));
-            listAlbums.ListAlbum.Add(new Album("12541", "Chamcoix", "Gaja", "neo lama", 2019));
-            this.DataContext = this;
+            DataContext = this;
+            var serdes = new PersistanceXml();
+            LibraryAlbum = serdes.Deserialize();
+            
         }
         //Probleme: les binding ne fonctionnent pas
         private void MasterUserControl_Loaded(object sender, RoutedEventArgs e)

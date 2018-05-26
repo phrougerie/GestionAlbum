@@ -11,8 +11,8 @@
             <ColumnDefinition Width="23*"/>
             <ColumnDefinition Width="65*"/>
         </Grid.ColumnDefinitions>
-        <local:MasterUserControl/>
-        <local:UserDetailed Grid.Column="1" />
+        <local:MasterUserControl x:Name="MasterUserControl" LAlbum="{Binding LibraryAlbum}"/>
+        <local:UserDetailed Grid.Column="1" TheAlbum="{Binding SelectedAlbum,ElementName=MasterUserControl}" />
 
     </Grid>
 </Window>

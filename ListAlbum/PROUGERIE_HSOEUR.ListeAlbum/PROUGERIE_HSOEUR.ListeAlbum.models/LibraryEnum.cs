@@ -14,20 +14,34 @@ namespace LibraryALbumClass
 
         int position = -1;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="list"></param>
         public LibraryEnum(List<Album> list)
         {
             _library = list;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public bool MoveNext()
         {
             position++;
             return (position < _library.Capacity);
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public void Reset()
         {
             position = -1;
         }
+        /// <summary>
+        /// 
+        /// </summary>
         object IEnumerator.Current
         {
             get
@@ -35,6 +49,9 @@ namespace LibraryALbumClass
                 return Current;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public Album Current
         {
             get

@@ -26,6 +26,16 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         public int Year { get; internal set; }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="min"></param>
+        /// <param name="sec"></param>
+        /// <param name="artist"></param>
+        /// <param name="album"></param>
+        /// <param name="genre"></param>
+        /// <param name="year"></param>
         public Track(string title, int min,int sec, string artist, string album, string genre, int year)
         {
             
@@ -37,6 +47,11 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             Year = year;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             var track = obj as Track;
@@ -49,6 +64,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
                    Year == track.Year;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             var hashCode = 2029241367;
