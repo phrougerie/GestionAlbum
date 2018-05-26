@@ -1,25 +1,64 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 namespace PROUGERIE_HSOEUR.ListeAlbum.models
 {
     [DataContract(Name = "album")]
-    public class Album : IEnumerable<Track>
+    public class Album : IEnumerable<Track>, INotifyPropertyChanged
     {
+        
+        private string title;
+        public string artist;
+        public string genre;
+        public int year;
         [DataMember]
         public string KeyAlbum { get; set; }
+
         [DataMember]
-        public string Title{get; set;}
+        public string Title{get { return title; } set{
+                title = value;
+                // Call OnPropertyChanged whenever the property is updated
+                OnPropertyChanged("Title");
+            }
+        }
         [DataMember]
-        public Time TimeA{ get; set; }
+        public Time TimeA { get; set; }
         [DataMember]
-        public string Artist { get;  set; }
+        public string Artist
+        {
+            get { return artist; }
+            set
+            {
+                artist = value;
+                // Call OnPropertyChanged whenever the property is updated
+                OnPropertyChanged("Artist");
+            }
+        }
         [DataMember]
-        public string Genre { get;  set; }
+        public string Genre
+        {
+            get { return genre; }
+            set
+            {
+                genre = value;
+                // Call OnPropertyChanged whenever the property is updated
+                OnPropertyChanged("Genre");
+            }
+        }
         [DataMember]
-        public int Year { get;  set; }
-        
+        public int Year
+        {
+            get { return year; }
+            set
+            {
+                year = value;
+                // Call OnPropertyChanged whenever the property is updated
+                OnPropertyChanged("Year");
+            }
+        }
+
         [DataMember(EmitDefaultValue = false)]
         public List<Track> ListTrack { get; private set; }
 
@@ -39,7 +78,17 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             Year = year;
             ListTrack = new List<Track>();
         }
-        
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
 
         /// <summary>
         /// 

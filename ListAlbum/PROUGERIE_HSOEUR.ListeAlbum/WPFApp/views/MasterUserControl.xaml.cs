@@ -49,7 +49,7 @@ namespace WPFApp.views
         private void OpenNewAlbumWindow(object sender, RoutedEventArgs e)
         {
             AddNewAlbum addNewAlbum = new AddNewAlbum();
-
+            addNewAlbum.ShowDialog();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -17,7 +18,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         /// 
         /// </summary>
         public List<Album> ListAlbum { get; private set; }
-
+        
         /// <summary>
         /// 
         /// </summary>
@@ -30,6 +31,9 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             ListAlbum = liste;
         }
         
+
+        
+
         /// <summary>
         /// 
         /// </summary>

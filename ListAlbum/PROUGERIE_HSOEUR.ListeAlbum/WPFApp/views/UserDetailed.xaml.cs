@@ -42,5 +42,16 @@ namespace WPFApp.views
         {
             InitializeComponent();
         }
+
+        private void AddTrack_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewTrack addNewTrack = new AddNewTrack();
+            addNewTrack.ShowDialog();
+        }
+
+        private void AjoutAlbum_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
