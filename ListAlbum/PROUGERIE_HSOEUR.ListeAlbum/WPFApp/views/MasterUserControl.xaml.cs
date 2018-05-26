@@ -1,6 +1,7 @@
 ﻿using PROUGERIE_HSOEUR.ListeAlbum.models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,10 +47,31 @@ namespace WPFApp.views
             InitializeComponent();
         }
 
-        private void OpenNewAlbumWindow(object sender, RoutedEventArgs e)
+        
+
+        private void NewAlbumAdded(object sender, RoutedEventArgs e)
         {
             AddNewAlbum addNewAlbum = new AddNewAlbum();
+            addNewAlbum.Closing+= newAlbum_Closing;
             addNewAlbum.ShowDialog();
+        }
+        void newAlbum_Closing(object sender, CancelEventArgs e)
+        {
+            var window = sender as AddNewAlbum;
+            int year;
+            if (int.TryParse(window.TextBoxYearAl.Text, out year))
+            {
+                if (year < 0) year=0;
+            }
+            else
+            {
+                year = 0;
+            }
+            
+            if (window.TextBoxcle.Text!=""&& window.TextBoxNameAl.Text!=""&& window.TextBoxArtAl.Text!=""&& window.TextBoxGenreAl.Text!=""&&(year!=0)) {
+                Album al = new Album(window.TextBoxcle.Text, window.TextBoxNameAl.Text, window.TextBoxArtAl.Text, window.TextBoxGenreAl.Text, year);
+                (LAlbum as LibraryAlbum).AddAlbum(al);
+            }
         }
     }
 }

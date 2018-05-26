@@ -49,9 +49,6 @@ namespace WPFApp.views
             addNewTrack.ShowDialog();
         }
 
-        private void AjoutAlbum_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -11,14 +11,23 @@ using System.Threading.Tasks;
 namespace PROUGERIE_HSOEUR.ListeAlbum.models
 {
     
-    public class LibraryAlbum : IEnumerable<Album>
+    public class LibraryAlbum : IEnumerable<Album>,INotifyPropertyChanged
     {
-        
+        private List<Album> listAlbum;
         /// <summary>
         /// 
         /// </summary>
-        public List<Album> ListAlbum { get; private set; }
-        
+        public List<Album> ListAlbum
+        {
+            get { return listAlbum; }
+            set
+            {
+                listAlbum = value;
+                // Call OnPropertyChanged whenever the property is updated
+                OnPropertyChanged("ListAlbum");
+            }
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -30,9 +39,18 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         {
             ListAlbum = liste;
         }
-        
 
-        
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+
 
         /// <summary>
         /// 

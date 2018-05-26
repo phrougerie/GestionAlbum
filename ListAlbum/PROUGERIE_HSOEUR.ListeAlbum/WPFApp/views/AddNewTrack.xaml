@@ -21,6 +21,6 @@
             <TextBox Background="#FFF1C232" Width="36" Height="38" Margin="117,34,14,33" Padding="1" />
             <TextBox Background="#FFF1C232" Width="38" Height="38" Margin="12,34,0,33" Padding="1" />
         </StackPanel>
-        <Button Background="#FF2B78E4" Content="Ajouter l'&#x9;album" Height="75"/>
+        <Button Background="#FF2B78E4" Content="Ajouter l'&#x9;album" Height="75" Click="AddTackOnClicked"/>
     </StackPanel>
 </Window>

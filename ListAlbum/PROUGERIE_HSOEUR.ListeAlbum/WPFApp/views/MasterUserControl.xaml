@@ -16,7 +16,7 @@
         <TextBlock Grid.Row="0" Background="#FF45818E" Text="Album et artist" FontSize="18" TextAlignment="Center" Foreground="#FFCBBD30"/>
 
 
-        <ListView  x:Name="AlbumListBox" SelectedItem="{Binding SelectedAlbum,ElementName=root}" ItemsSource="{Binding LAlbum.ListAlbum,ElementName=root}" Grid.Row="1" Background="#FFFFE599" FontFamily="ArialBlack" FontSize="16"  >
+        <ListView  Name="AlbumListView" SelectedItem="{Binding SelectedAlbum,ElementName=root}" ItemsSource="{Binding LAlbum.ListAlbum,ElementName=root,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Grid.Row="1" Background="#FFFFE599" FontFamily="ArialBlack" FontSize="16"  >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="150" Header="Titre" DisplayMemberBinding="{Binding Path=Title}"/>
@@ -27,7 +27,7 @@
 
         </ListView>
 
-        <Button x:Name="button" Grid.Row="2" Content="Ajouter un album" Background="#FF45818E" Click="OpenNewAlbumWindow"/>
+        <Button x:Name="button" Grid.Row="2" Content="Ajouter un album" Background="#FF45818E" Click="NewAlbumAdded"/>
 
     </Grid>
 

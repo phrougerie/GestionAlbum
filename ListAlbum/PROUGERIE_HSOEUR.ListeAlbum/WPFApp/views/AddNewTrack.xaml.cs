@@ -23,5 +23,10 @@ namespace WPFApp.views
         {
             InitializeComponent();
         }
+
+        private void AddTackOnClicked(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

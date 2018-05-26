@@ -23,5 +23,12 @@ namespace WPFApp.views
         {
             InitializeComponent();
         }
+
+        private void AddAlbOnClicked(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+        
+        
     }
 }

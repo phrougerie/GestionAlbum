@@ -21,14 +21,14 @@ namespace WPFApp.views
     /// </summary>
     public partial class HomeWindow : Window
     {
-        public LibraryAlbum LibraryAlbum { get; set; }
+        public LibraryAlbum TheListAlbums { get; set; }
         public HomeWindow()
         {
             
             InitializeComponent();
             DataContext = this;
             var serdes = new PersistanceXml();
-            LibraryAlbum = serdes.Deserialize();
+            TheListAlbums = serdes.Deserialize();
             
         }
         //Probleme: les binding ne fonctionnent pas

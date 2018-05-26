@@ -81,7 +81,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="AjoutAlbum" Content="Ajouter un&#xA;Album" Grid.Row="2" Grid.Column="0" Background="#FF674EA7" Foreground="#FFD3B219" FontSize="16" FontFamily="Rockwell Extra Bold"  TextOptions.TextFormattingMode="Display" Click="AjoutAlbum_Click" />
+        <Button x:Name="Gerer_album" Content="Ajouter un&#xA;Album" Grid.Row="2" Grid.Column="0" Background="#FF674EA7" Foreground="#FFD3B219" FontSize="16" FontFamily="Rockwell Extra Bold"  TextOptions.TextFormattingMode="Display"  />
         <Button x:Name="Ajout_morceau" Content="Ajouter un nouveau morceau" Grid.Row="2" Grid.Column="2" FontFamily="Rockwell Extra Bold" FontSize="16" Foreground="#FF631616" Click="AddTrack_Click" Background="#FFF1C232" />
         <Button Content="Sauvegarder" Grid.Column="1" Grid.Row="2" Background="#FFE06666" FontFamily="Rockwell Extra Bold" FontSize="16" Foreground="#FF184C70"/>
 
