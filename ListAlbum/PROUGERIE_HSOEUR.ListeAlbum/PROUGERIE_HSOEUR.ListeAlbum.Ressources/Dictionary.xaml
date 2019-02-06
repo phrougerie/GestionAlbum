@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   >
+    <SolidColorBrush Color="#FF45818E" x:Key="AddColor"/>
+    <SolidColorBrush Color="black" x:Key="SuppressColor"/>
+    <SolidColorBrush Color="#e06666" x:Key="SaveColor"/> 
+    <SolidColorBrush Color="#FF834141" x:Key="ListUserDetailedColor"/>
+    <SolidColorBrush Color="#FFC324C3" x:Key="DescriptifAlbumColor"/>
+    <SolidColorBrush Color="#FF45818E" x:Key="TitreMaster"/>
+    <SolidColorBrush Color="#FFF1C232" x:Key="CaseColor"/>
+    <SolidColorBrush Color="#FF2B78E4" x:Key="AddButtonAlbumBlue"/>
+    <SolidColorBrush Color="#FF4FBB3E" x:Key="CheckImageButtonColor"/>
+    <SolidColorBrush Color="#FFEC8100" x:Key="PlayerColor"/>
+    <Style TargetType="Border" x:Key="BorderGen">
+
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#FF443A3D"/>
+    </Style>
+</ResourceDictionary>

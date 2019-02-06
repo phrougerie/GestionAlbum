@@ -1,0 +1,16 @@
+H:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.views.dll
+H:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.views.pdb
+H:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.dll
+H:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.pdb
+H:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.views.csprojAssemblyReference.cache
+H:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.views.csproj.CoreCompileInputs.cache
+H:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.views.csproj.CopyComplete
+H:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.views.dll
+H:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.views.pdb
+E:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.views.dll
+E:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.views.pdb
+E:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.dll
+E:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.pdb
+E:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.views.csprojResolveAssemblyReference.cache
+E:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.views.dll
+E:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.views\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.views.pdb

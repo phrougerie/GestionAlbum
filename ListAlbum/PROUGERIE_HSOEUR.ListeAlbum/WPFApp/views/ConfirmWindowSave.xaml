@@ -1,0 +1,13 @@
+﻿<Window x:Class="WPFApp.views.ConfirmWindowSave"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApp.views"
+        mc:Ignorable="d"
+        Title="ConfirmWindow" MinHeight="229.892" MaxHeight="229.892" Height="229.892" MinWidth="310.31" MaxWidth="310.31" Width="310.31">
+    <StackPanel Background="{StaticResource DescriptifAlbumColor}">
+        <TextBlock Margin="0,75,0,75" HorizontalAlignment="Center" Text="Votre sauvegarde a bien été prise en compte" Foreground="#DDFFFFFF" FontFamily="DejaVu Serif Condensed" FontSize="14"/>
+        <Button Margin="76,-40,68,0" Content="OK" Foreground="#DDFFFFFF" Background="{StaticResource AddButtonAlbumBlue}" Click="OnCloseConfirmed" FontFamily="DejaVu Serif Condensed"/>
+    </StackPanel>
+</Window>

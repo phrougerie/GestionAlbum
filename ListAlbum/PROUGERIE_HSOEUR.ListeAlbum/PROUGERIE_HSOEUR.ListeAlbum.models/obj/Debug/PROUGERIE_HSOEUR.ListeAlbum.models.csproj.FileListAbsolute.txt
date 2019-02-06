@@ -1,0 +1,10 @@
+H:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.dll
+H:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.pdb
+H:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.csproj.CoreCompileInputs.cache
+H:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.dll
+H:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.pdb
+E:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.dll
+E:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\bin\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.pdb
+E:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.csprojResolveAssemblyReference.cache
+E:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.dll
+E:\ListAlbum\PROUGERIE_HSOEUR.ListeAlbum\PROUGERIE_HSOEUR.ListeAlbum.models\obj\Debug\PROUGERIE_HSOEUR.ListeAlbum.models.pdb

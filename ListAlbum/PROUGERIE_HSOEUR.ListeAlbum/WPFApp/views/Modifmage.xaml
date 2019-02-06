@@ -1,0 +1,17 @@
+﻿<Window x:Class="WPFApp.views.Modifmage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApp.views"
+        mc:Ignorable="d"
+        Title="Modifmage" MinHeight="622.333" MaxHeight="622.333" Height="622.333" MaxWidth="643.076" MinWidth="643.076" Width="643.076">
+    <StackPanel Background="{StaticResource DescriptifAlbumColor}">
+        <TextBlock HorizontalAlignment="Center" Height="17" Margin="165,84,153,0" Width="317" Foreground="White" FontFamily="DejaVu Serif Condensed" FontSize="16"><Run Text="Entrez l'addresse de la nouvelle image"/><Run Text=" ou"/></TextBlock>
+        <Button Content="Chercher une image " Click="Image_Choiced" Margin="140,3,153,0" Background="{DynamicResource CheckImageButtonColor}" FontFamily="DejaVu Sans" FontSize="17"  />
+        <TextBox x:Name="TexBoxImage" HorizontalAlignment="Center" Margin="125,11,110,0"  MinWidth="172" Background="{StaticResource CaseColor}"/>
+        <Button Content="Verifier la validité de l'image" Click="ImageVerified" Margin="140,16,153,0" Height="37" Background="{StaticResource CheckImageButtonColor}" FontFamily="DejaVu Serif Condensed" FontSize="16"/>
+        <Image x:Name="Imageverif" Source="Covers/CoverDefault.jpg" Margin="0,17,0,0" Height="276"/>
+        <Button VerticalAlignment="Bottom" Content="Valider" Click="Button_Click" Margin="0,34,0,0" Background="#FF2B78E4" Height="37" FontFamily="DejaVu Serif Condensed" FontSize="18"/>
+    </StackPanel>
+</Window>
