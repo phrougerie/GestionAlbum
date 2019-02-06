@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -13,11 +14,9 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
     
     public class LibraryAlbum : IEnumerable<Album>,INotifyPropertyChanged
     {
-        private List<Album> listAlbum;
-        /// <summary>
-        /// 
-        /// </summary>
-        public List<Album> ListAlbum
+        private ObservableCollection<Album> listAlbum;
+        
+        public ObservableCollection<Album> ListAlbum
         {
             get { return listAlbum; }
             set
@@ -28,19 +27,21 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+       
         public LibraryAlbum()
         {
-            ListAlbum = new List<Album>();
+            ListAlbum = new ObservableCollection<Album>();
         }
-        public LibraryAlbum(List<Album> liste)
+        public LibraryAlbum(ObservableCollection<Album> liste)
         {
             ListAlbum = liste;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
         protected void OnPropertyChanged(string name)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
@@ -53,7 +54,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
 
 
         /// <summary>
-        /// 
+        /// Add an album to the Librairy.
         /// </summary>
         /// <param name="album"></param>
         /// <returns></returns>
@@ -70,10 +71,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             ListAlbum.Add(album);
             return true;
         }
-        
-        
+
+
         /// <summary>
-        /// 
+        ///  Delete an album to the Librairy
         /// </summary>
         /// <param name="key"></param>
         /// <param name="trackT"></param>
@@ -95,7 +96,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         }
       
         /// <summary>
-        /// 
+        /// Add a track to an Album.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="trackT"></param>
@@ -103,13 +104,13 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         /// <param name="sec"></param>
         /// <param name="genre"></param>
         /// <returns></returns>
-        public bool AddTrackAl(string key,string trackT,int min,int sec,string genre)
+        public bool AddTrackAl(string key,string trackT,int min,int sec,string genre,int tracknum)
         {
             foreach (var al in ListAlbum)
             {
                 if (key.Equals(al.KeyAlbum))
                 {
-                    al.AddTrack(new Track(trackT, min,sec, al.Artist, al.Title,genre,al.Year));
+                    al.AddTrack(new Track(trackT, min,sec, al.Artist, al.Title,genre,al.Year,tracknum));
                     return true;
                 }
             }
@@ -118,7 +119,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         
         
         /// <summary>
-        /// 
+        /// Delte an album.
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -137,7 +138,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         }
 
         /// <summary>
-        /// 
+        /// Modifies the title of an album.
         /// </summary>
         /// <param name="album"></param>
         /// <param name="title"></param>
@@ -152,7 +153,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             return true;
         }
         /// <summary>
-        /// 
+        /// Modifies the time of an album.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="min"></param>
@@ -174,7 +175,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             return false;
         }
         /// <summary>
-        /// 
+        /// Modifies the artist of an album.
         /// </summary>
         /// <param name="album"></param>
         /// <param name="artist"></param>
@@ -190,7 +191,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         }
 
         /// <summary>
-        /// 
+        /// Modifies the genre of an album.
         /// </summary>
         /// <param name="album"></param>
         /// <param name="genre"></param>
@@ -205,7 +206,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
             return true;
         }
         /// <summary>
-        /// 
+        /// Modifies the year of an album.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="year"></param>
@@ -226,7 +227,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         }
 
         /// <summary>
-        /// 
+        /// allows you to choose what change you want to do to an album.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="modify"></param>
@@ -283,14 +284,14 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
 
         
         /// <summary>
-        /// 
+        /// Sort the albums by its key.
         /// </summary>
         public void listByKey()
         {
             var l = from album in ListAlbum
                     orderby album.KeyAlbum,album.Artist
                     select album;
-            ListAlbum = new List<Album>();
+            ListAlbum = new ObservableCollection<Album>();
             foreach (var album in l)
             {
                 AddAlbum(album);
@@ -298,56 +299,56 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         }
 
         /// <summary>
-        /// 
+        /// Sort the albums by its artsist.
         /// </summary>
         public void listByArtist()
         {
             var l = from album in ListAlbum
                     orderby album.Artist,album.Year
                     select album;
-            ListAlbum = new List<Album>();
+            ListAlbum = new ObservableCollection<Album>();
             foreach (var album in l)
             {
                 AddAlbum(album);
             }
         }
         /// <summary>
-        /// 
+        /// Sort the albums by its title.
         /// </summary>
         public void listByAlbum()
         {
             var l = from album in ListAlbum
                     orderby album.Title, album.Year
                     select album;
-            ListAlbum = new List<Album>();
+            ListAlbum = new ObservableCollection<Album>();
             foreach (var album in l)
             {
                 AddAlbum(album);
             }
         }
         /// <summary>
-        /// 
+        /// Sort the albums by its genre.
         /// </summary>
         public void listByGenre()
         {
             var l = from album in ListAlbum
                     orderby album.Title, album.Artist,album.Year
                     select album;
-            ListAlbum = new List<Album>();
+            ListAlbum = new ObservableCollection<Album>();
             foreach (var album in l)
             {
                 AddAlbum(album);
             }
         }
         /// <summary>
-        /// 
+        /// Sort the albums by its year.
         /// </summary>
         public void listByYear()
         {
             var l = from album in ListAlbum
                     orderby album.Year,album.Title
                     select album;
-            ListAlbum = new List<Album>();
+            ListAlbum = new ObservableCollection<Album>();
             foreach (var album in l)
             {
                 AddAlbum(album);
@@ -355,7 +356,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         }
 
         /// <summary>
-        /// 
+        /// Checks if a librairy is the same as an other one.
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
@@ -363,16 +364,16 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         {
             var album = obj as LibraryAlbum;
             return album != null &&
-                   EqualityComparer<List<Album>>.Default.Equals(ListAlbum, album.ListAlbum);
+                   EqualityComparer<ObservableCollection<Album>>.Default.Equals(ListAlbum, album.ListAlbum);
         }
 
         /// <summary>
-        /// 
+        /// return an hashcode.
         /// </summary>
         /// <returns></returns>
         public override int GetHashCode()
         {
-            return -1727654344 + EqualityComparer<List<Album>>.Default.GetHashCode(ListAlbum);
+            return -1727654344 + EqualityComparer<ObservableCollection<Album>>.Default.GetHashCode(ListAlbum);
         }
     }
 }

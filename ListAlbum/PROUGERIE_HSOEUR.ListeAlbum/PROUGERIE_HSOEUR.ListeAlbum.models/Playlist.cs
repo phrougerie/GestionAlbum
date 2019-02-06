@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,10 +12,10 @@ namespace LibraryALbumClass
     public class Playlist : IEnumerable
     {
        
-        public List<Track> ListTrack { get; private set; }
+        public ObservableCollection<Track> ListTrack { get; private set; }
         public Playlist()
         {
-            ListTrack = new List<Track>();
+            ListTrack = new ObservableCollection<Track>();
         }
 
         /// <summary>
@@ -42,7 +43,7 @@ namespace LibraryALbumClass
         
 
         /// <summary>
-        /// 
+        /// Add a track to a playlist.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="titleT"></param>
@@ -80,7 +81,7 @@ namespace LibraryALbumClass
         }
 
         /// <summary>
-        /// 
+        /// Add a track if it's not already in the playlist.
         /// </summary>
         /// <param name="track"></param>
         private void AddTrackSort(Track track)
@@ -97,7 +98,7 @@ namespace LibraryALbumClass
         }
         
         /// <summary>
-        /// 
+        /// Calculate the time of a playlist.
         /// </summary>
         /// <param name="timeHour"></param>
         /// <returns></returns>
@@ -130,43 +131,14 @@ namespace LibraryALbumClass
 
         
         /// <summary>
-        /// 
+        /// Sort the playlist by its artist.
         /// </summary>
         public void ListByArtist()
         {
             var l = from track in ListTrack
                     orderby track.Artist, track.Year
                     select track;
-            ListTrack = new List<Track>();
-            foreach (var track in l)
-            {
-                AddTrackSort(track);
-            }
-        }
-        
-        /// <summary>
-        /// 
-        /// </summary>
-        public void ListByGenre()
-        {
-            var l = from track in ListTrack
-                    orderby track.Title, track.Artist, track.Year
-                    select track;
-            ListTrack = new List<Track>();
-            foreach (var track in l)
-            {
-                AddTrackSort(track);
-            }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public void ListByYear()
-        {
-            var l = from track in ListTrack
-                    orderby track.Year, track.Title
-                    select track;
-            ListTrack = new List<Track>();
+            ListTrack = new ObservableCollection<Track>();
             foreach (var track in l)
             {
                 AddTrackSort(track);
@@ -174,7 +146,36 @@ namespace LibraryALbumClass
         }
 
         /// <summary>
-        /// 
+        /// Sort the playlist by its genre.
+        /// </summary>
+        public void ListByGenre()
+        {
+            var l = from track in ListTrack
+                    orderby track.Title, track.Artist, track.Year
+                    select track;
+            ListTrack = new ObservableCollection<Track>();
+            foreach (var track in l)
+            {
+                AddTrackSort(track);
+            }
+        }
+        /// <summary>
+        /// Sort the playlist by its year.
+        /// </summary>
+        public void ListByYear()
+        {
+            var l = from track in ListTrack
+                    orderby track.Year, track.Title
+                    select track;
+            ListTrack = new ObservableCollection<Track>();
+            foreach (var track in l)
+            {
+                AddTrackSort(track);
+            }
+        }
+
+        /// <summary>
+        /// Checks if a playlist is the same as an other one.
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
@@ -182,16 +183,16 @@ namespace LibraryALbumClass
         {
             var playlist = obj as Playlist;
             return playlist != null &&
-                   EqualityComparer<List<Track>>.Default.Equals(ListTrack, playlist.ListTrack);
+                   EqualityComparer<ObservableCollection<Track>>.Default.Equals(ListTrack, playlist.ListTrack);
         }
 
         /// <summary>
-        /// 
+        /// Returns an hashcode.
         /// </summary>
         /// <returns></returns>
         public override int GetHashCode()
         {
-            return -1794596168 + EqualityComparer<List<Track>>.Default.GetHashCode(ListTrack);
+            return -1794596168 + EqualityComparer<ObservableCollection<Track>>.Default.GetHashCode(ListTrack);
         }
     }
 }

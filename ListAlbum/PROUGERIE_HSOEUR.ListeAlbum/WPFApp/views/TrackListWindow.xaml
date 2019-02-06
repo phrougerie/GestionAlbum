@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApp.views"
         mc:Ignorable="d"
-        Title="TrackListWindow" Height="632.332" MinHeight="632" MinWidth="1091" Width="1091">
+        Title="TrackListWindow" Height="300" Width="300">
     <Grid>
         
     </Grid>

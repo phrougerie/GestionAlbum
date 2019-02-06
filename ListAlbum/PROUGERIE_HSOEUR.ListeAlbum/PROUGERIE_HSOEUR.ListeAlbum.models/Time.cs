@@ -14,6 +14,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         public int Min {get;  set;}
         [DataMember]
         public int Sec { get; set; }
+
         /// <summary>
         /// 
         /// </summary>

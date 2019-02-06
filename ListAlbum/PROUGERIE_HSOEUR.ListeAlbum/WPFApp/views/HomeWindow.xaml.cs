@@ -1,18 +1,7 @@
 ﻿
 using PROUGERIE_HSOEUR.ListeAlbum.models;
 using PROUGERIE_HSOEUR.ListeAlbum.persistance;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace WPFApp.views
 {
@@ -21,17 +10,17 @@ namespace WPFApp.views
     /// </summary>
     public partial class HomeWindow : Window
     {
+        private readonly PersistanceXml serdes= new PersistanceXml(); 
         public LibraryAlbum TheListAlbums { get; set; }
+        //Initialise la fentre principale. Charge le fichier xml dans une library d'albums?
         public HomeWindow()
         {
-            
+             
             InitializeComponent();
             DataContext = this;
-            var serdes = new PersistanceXml();
-            TheListAlbums = serdes.Deserialize();
+            TheListAlbums = new LibraryAlbum(serdes.Deserialize());
             
         }
-        //Probleme: les binding ne fonctionnent pas
         private void MasterUserControl_Loaded(object sender, RoutedEventArgs e)
         {
 

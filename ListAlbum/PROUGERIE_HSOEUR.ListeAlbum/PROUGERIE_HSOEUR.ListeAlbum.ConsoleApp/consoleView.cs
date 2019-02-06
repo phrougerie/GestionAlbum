@@ -7,7 +7,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
     internal class ConsoleView : IView
     {
         /// <summary>
-        /// 
+        /// Displays the main menu.
         /// </summary>
         /// <returns></returns>
         public int DisplayMenu()
@@ -30,7 +30,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
         }
         
         /// <summary>
-        /// 
+        /// Display the text that's in param.
         /// </summary>
         /// <param name="textdisplay"></param>
         public void DisplayText(string textdisplay)
@@ -39,7 +39,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
         }
 
         /// <summary>
-        /// 
+        /// Ask for the number you want to choose.
         /// </summary>
         /// <param name="textdisplay"></param>
         /// <returns></returns>
@@ -67,7 +67,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
             return number;
         }
         /// <summary>
-        /// 
+        /// Display the total time of the playlist.
         /// </summary>
         /// <param name="time"></param>
         /// <param name="hour"></param>
@@ -76,7 +76,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
             Console.WriteLine("Le temps de la liste est de : " + hour + " h, " + time.Min + " m, " + time.Sec + ".");
         }
         /// <summary>
-        /// 
+        /// Ask for the string you want to write.
         /// </summary>
         /// <param name="textdisplay"></param>
         /// <returns></returns>
@@ -89,7 +89,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
 
         }
         /// <summary>
-        /// 
+        /// Ask for the time of a track.
         /// </summary>
         /// <returns></returns>
         public Time AskForTime()
@@ -102,7 +102,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
 
         }
         /// <summary>
-        /// 
+        /// Ask for the seconds of the song's time.
         /// </summary>
         /// <returns></returns>
         public int AskForSeconds()
@@ -131,7 +131,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
             return sec;
         }
         /// <summary>
-        /// 
+        /// Ask for the minutes of the song's time.
         /// </summary>
         /// <returns></returns>
         public int AskForMinute()
@@ -153,7 +153,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
             return min;
         }
         /// <summary>
-        /// 
+        /// Allows a user to enter an album
         /// </summary>
         /// <returns></returns>
         public Album AskForAlbum()
@@ -169,7 +169,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
         }
 
         /// <summary>
-        /// 
+        /// Checks if the operation is successful or not.
         /// </summary>
         /// <param name="ret"></param>
         public void VerifyBool(bool ret)
@@ -183,18 +183,25 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.ConsoleApp
                 Console.WriteLine("Impossible d'effectuer l'action\n");
             }
         }
+
+
+        /// <summary>
+        /// Allows the user to enter a track.
+        /// </summary>
+        /// <param name="album"></param>
+        /// <returns></returns>
         public Track AskForTrack(Album album)
         {
             var title = AskForString("Donner le titre du morceau :\n");
             var time = AskForTime();
             var genre = AskForString("Donner le genre:\n");
        
-            return new Track(title, time.Min, time.Sec, album.Artist,album.Title, genre, album.Year);
+            return new Track(title, time.Min, time.Sec, album.Artist,album.Title, genre, album.Year,1);
 
         }
 
         /// <summary>
-        /// 
+        /// Allows the user to change an album or a track.
         /// </summary>
         /// <param name="valid"></param>
         /// <returns></returns>

@@ -5,31 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApp.views"
         mc:Ignorable="d"
-        Title="AddNewAlbum" Height="628" Width="851.105" MinWidth="851.105" MaxWidth="851.105" MinHeight="628" MaxHeight="628"
+        Title="AddNewAlbum" Height="628" Width="861.105" MinWidth="861.105" MaxWidth="861.105" MinHeight="628" MaxHeight="628"
         >
-    <StackPanel Background="Magenta">
+    <StackPanel Background="{StaticResource DescriptifAlbumColor}">
         <StackPanel Margin="0" Height="105" Orientation="Horizontal">
-            <TextBlock Margin="100,50,22,26"><Run Text="Entrer une clé unique de l'album"/><LineBreak/><Run/></TextBlock>
-            <TextBox Name="TextBoxcle" TextWrapping="Wrap" Width="131" Margin="75,27,0,26" Background="#FFF1C232"/>
-            <Button  Width="192" Margin="0,73,-357,-146" Background="#FF2B78E4"/>
+            <TextBlock Margin="100,50,22,26" Foreground="White" FontFamily="DejaVu Serif Condensed" FontSize="16"><Run Text="Entrer une clé unique de l'album"/><LineBreak/><Run/></TextBlock>
+            <TextBox x:Name="TextBoxcle" TextWrapping="Wrap" Width="124" Margin="40,50,0,17" Background="{StaticResource CaseColor}" FontFamily="DejaVu Serif Condensed" FontSize="14" Height="38"/>
+
         </StackPanel>
         <StackPanel Margin="0" Height="105" Orientation="Horizontal">
-            <TextBlock Margin="100,23,0,24" Padding="0,23,0,0"><Run Text="Entrer un"/><Run Text=" nom d'album"/></TextBlock>
-            <TextBox Name="TextBoxNameAl" Background="#FFF1C232" DockPanel.Dock="Left" Width="131" Height="38" Margin="146,24,0,24" />
+            <TextBlock Margin="100,23,0,24" Padding="0,23,0,0" Foreground="White" FontSize="16" FontFamily="DejaVu Serif Condensed"><Run Text="Entrer un"/><Run Text=" nom d'album"/></TextBlock>
+            <TextBox Name="TextBoxNameAl" Background="{StaticResource CaseColor}" DockPanel.Dock="Left" Width="131" Height="38" Margin="128,34,0,33" FontFamily="DejaVu Serif Condensed" FontSize="14" />
         </StackPanel>
 
         <StackPanel Margin="0" Height="105" Orientation="Horizontal">
-            <TextBlock Text="Entrer un artiste ou groupe" Margin="100,44,0,0" Width="185"/>
-            <TextBox Name="TextBoxArtAl" Background="#FFF1C232" Width="131" Height="38" Margin="82,26,0,27" />
+            <TextBlock Text="Entrer un artiste ou groupe" Margin="100,44,0,0" Width="209" Foreground="White" FontFamily="DejaVu Serif Condensed" FontSize="16"/>
+            <TextBox Name="TextBoxArtAl" Background="{StaticResource CaseColor}" Width="130" Height="38" Margin="86,33,0,34" FontFamily="DejaVu Serif Condensed"  FontSize="14" />
         </StackPanel>
         <StackPanel Margin="0" Height="105" Orientation="Horizontal">
-            <TextBlock Margin="100,46,0,0"><Run Text="Entrer "/><Run Text="le genre de l'album"/></TextBlock>
-            <TextBox Name="TextBoxGenreAl" Background="#FFF1C232" Width="131" Height="38" Margin="129,0,0,0" />
+            <TextBlock Margin="100,46,0,0" Foreground="White" FontFamily="DejaVu Serif Condensed" FontSize="16"><Run Text="Entrer "/><Run Text="le genre de l'album"/></TextBlock>
+            <TextBox Name="TextBoxGenreAl" Background="{StaticResource CaseColor}" Width="138" Height="38" Margin="102,34,0,33" FontFamily="DejaVu Serif Condensed" FontSize="14" />
         </StackPanel>
         <StackPanel Height="105" Orientation="Horizontal">
-            <TextBlock Text="Entrer l'année de paruption de l'album" Margin="100,46,0,0"/>
-            <TextBox Name="TextBoxYearAl" Background="#FFF1C232" Width="131" Height="38" Margin="65,0,0,0" Padding="1" />
+            <TextBlock Margin="100,46,0,0" Foreground="White" FontFamily="DejaVu Serif Condensed" FontSize="16" TextAlignment="Center"><Run Text="Entrer l'année de paruption"/><LineBreak/><Run Text=" "/><Run Text="de "/><Run Text="l'album"/></TextBlock>
+            <TextBox Name="TextBoxYearAl" Background="{StaticResource CaseColor}" Width="97" Height="38" Margin="93,34,0,33" Padding="1" FontFamily="DejaVu Serif Condensed" FontSize="14" />
         </StackPanel>
-        <Button Background="#FF2B78E4" Content="Ajouter l'&#x9;album" Height="76" Click="AddAlbOnClicked"/>
+        <StackPanel  Margin="550,-466,0,0">
+            <TextBlock Foreground="White" Margin="35,4,23,13" FontSize="16"><Run Text="Entrez un lien vers une image ou"/><Run Text=" :"/></TextBlock>
+            <Button Content="Chercher une image " Click="Image_Choiced" Margin="10,0" Background="{DynamicResource CheckImageButtonColor}" FontFamily="DejaVu Sans" FontSize="17"  />
+            <TextBox x:Name="TexBoxCover" Background="{StaticResource CaseColor}" Height="45" Margin="35,14,32,0" FontFamily="DejaVu Serif Condensed" />
+            <Button Content="Verifier la validité de l'image" Click="ImageVerified" Margin="10,9,10,0" Height="37" Background="{StaticResource CheckImageButtonColor}" FontSize="17" FontFamily="DejaVu Sans"/>
+            <Image x:Name="Imageverif" Source="Covers/CoverDefault.jpg" Margin="0,4,0,9" Height="276"/>
+        </StackPanel>
+        <Button Background="{StaticResource AddButtonAlbumBlue}" Content="Ajouter l'album" Height="73" Click="AddAlbOnClicked" FontSize="17" FontFamily="DejaVu Sans" />
     </StackPanel>
 </Window>

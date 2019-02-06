@@ -4,86 +4,124 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFApp.views"
+             
              mc:Ignorable="d" MinWidth="790" MinHeight="585">
-    <Grid x:Name="Grid1" >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="213*"/>
-            <ColumnDefinition Width="281*"/>
-            <ColumnDefinition Width="296*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
+    <Border Style="{StaticResource BorderGen}">
+        <Grid x:Name="Grid1" Background="#FFB4A7D6" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="272"/>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="298*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
 
-            <RowDefinition Height="162*"/>
-            <RowDefinition Height="347*"/>
-            <RowDefinition Height="76*"/>
-        </Grid.RowDefinitions>
+                <RowDefinition Height="322"/>
+                <RowDefinition Height="146*"/>
+                <RowDefinition Height="72"/>
+                <RowDefinition Height="49*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.Column="0"  Style="{StaticResource BorderGen}">
+                <StackPanel  Margin="0,0,231.667,0">
+                    <Image x:Name="coveralbum" Source="{Binding TheAlbum.CoverAlbum,ElementName=user}" MinHeight="270" Margin="0,0,-231,0" Width="270" />
+                    <Button Height="50" Content="Modifier la pochette" Click="Image_Modified" Background="{StaticResource AddColor}" FontFamily="DejaVu Sans"  FontSize="17" Margin="0,0,-231,0" Width="270"/>
+                </StackPanel>
+            </Border>
+            <Border   Grid.Row="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Grid.Column="1" Style="{StaticResource BorderGen}">
+                <StackPanel  x:Name="DescriptifAlbum"   Background="{StaticResource DescriptifAlbumColor}"  Margin="0.333,0,0,0" >
+                    <StackPanel Orientation="Horizontal" Margin="0,24,0,20">
+                        <TextBlock Text="Référence de l'album" Foreground="White" FontFamily="DejaVu Sans" FontSize="16"/>
+                        <TextBlock  Text="{Binding TheAlbum.KeyAlbum, ElementName=user}" Margin="179,0,0,0" FontFamily="DejaVu Sans Condensed" FontSize="16" MinWidth="96" Height="19" Foreground="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                        <TextBlock Text="Titre de l'album" Foreground="White" FontSize="16" FontFamily="DejaVu Sans"/>
+                        <TextBox  Background="{x:Null}" Text="{Binding TheAlbum.Title, ElementName=user, UpdateSourceTrigger=PropertyChanged }" Margin="224,0,0,0" MinWidth="92" FontFamily="DejaVu Sans" FontSize="16" Foreground="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                        <TextBlock Text="Artiste/Groupe de l'album:" Foreground="White" FontSize="16" FontFamily="DejaVu Sans"/>
+                        <TextBox  Background="{x:Null}" Text="{Binding TheAlbum.Artist, ElementName=user, UpdateSourceTrigger=PropertyChanged}" Margin="138,0,0,0" FontFamily="DejaVu Sans" FontSize="16" MinWidth="92" Foreground="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                        <TextBlock Text="Genre de l'album:" Foreground="White" FontFamily="DejaVu Sans" FontSize="16"/>
+                        <TextBox  Background="{x:Null}" Text="{Binding TheAlbum.Genre, ElementName=user,UpdateSourceTrigger=PropertyChanged }" Margin="205,0,0,0" FontSize="16" FontFamily="DejaVu Sans" MinWidth="91" Foreground="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                        <TextBlock Text="Année:" Foreground="White" FontFamily="DejaVu Sans" FontSize="16"/>
+                        <TextBox  Background="{x:Null}" Text="{Binding TheAlbum.Year, ElementName=user,UpdateSourceTrigger=PropertyChanged }" Margin="291,0,0,0" FontFamily="DejaVu Sans" FontSize="16" MinWidth="90" Foreground="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Durée:" Foreground="White" FontFamily="DejaVu Sans" FontSize="16"/>
+                        <TextBlock Margin="283,0,0,0" FontFamily="DejaVu Sans" FontSize="16" Foreground="White">
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}  {0} : {1} ">
+                                    <Binding Path= "TheAlbum.TimeA.Min" ElementName="user"/>
+                                    <Binding Path= "TheAlbum.TimeA.Sec" ElementName="user"/>
 
-        <TextBlock Text="Lama" Grid.Column="0" Grid.Row="0" Background="#FF28272C" Grid.RowSpan="2"/>
-        <StackPanel  x:Name="DescriptifAlbum" Grid.Column="1" Grid.Row="0" Background="Magenta" Grid.RowSpan="2" Grid.ColumnSpan="2">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Référence de l'album"/>
-                <TextBlock  Background="Magenta"  Text="{Binding TheAlbum.KeyAlbum, ElementName=user}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Titre de l'album"/>
-                <TextBox  Background="Magenta" Text="{Binding TheAlbum.Title, ElementName=user, UpdateSourceTrigger=PropertyChanged }"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Artiste/Groupe de l'album:"/>
-                <TextBox  Background="Magenta" Text="{Binding TheAlbum.Artist, ElementName=user, UpdateSourceTrigger=PropertyChanged}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Genre de l'album:"/>
-                <TextBox  Background="Magenta" Text="{Binding TheAlbum.Genre, ElementName=user,UpdateSourceTrigger=PropertyChanged }"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Année:"/>
-                <TextBox  Background="Magenta" Text="{Binding TheAlbum.Year, ElementName=user,UpdateSourceTrigger=PropertyChanged }"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Durée:"/>
-                <TextBlock>
-                    <TextBlock.Text>
-                        <MultiBinding StringFormat="{}  {0} : {1} ">
-                            <Binding Path= "TheAlbum.TimeA.Min" ElementName="user"/>
-                            <Binding Path= "TheAlbum.TimeA.Sec" ElementName="user"/>
+                                </MultiBinding>
 
-                        </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </StackPanel>
 
-                    </TextBlock.Text>
-                </TextBlock>
-            </StackPanel>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="1"  Grid.ColumnSpan="3" Background="#FFB4A7D6" Style="{StaticResource BorderGen}">
+                <ListView x:Name="myListView" SelectedItem="{Binding SelectedTrack,ElementName=user}"  ItemsSource="{Binding TheAlbum.ListTrack,ElementName=user}" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" Foreground="#DDFFFFFF" FontFamily="DejaVu Sans" FontSize="18"   >
 
-        </StackPanel>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="75" Header="Lire">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="ImagesPlayer\play.png" Height="30" MouseUp="Play_Song"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
 
-        <ListView x:Name="myListView" ItemsSource="{Binding TheAlbum.ListTrack,ElementName=user}" Grid.Row="1" Grid.ColumnSpan="3" Background="#b4a7d6">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Width="200" Header="Titre" DisplayMemberBinding="{Binding Path=Title}"/>
-                        
-                    <GridViewColumn Width="100" Header="Genre"  DisplayMemberBinding="{Binding Path=Genre}"/>
-                    <GridViewColumn Width="100" Header="Durée" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock>
-                                    <TextBlock.Text>
-                                        <MultiBinding StringFormat="{}{0} : {1}">
-                                            <Binding Path="TimeT.Min" />
-                                            <Binding Path="TimeT.Sec" />
-                                        </MultiBinding>
-                                    </TextBlock.Text>
-                                </TextBlock>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    
+                            </GridViewColumn>
+                            <GridViewColumn Width="450" Header="Titre" DisplayMemberBinding="{Binding Path=Title}"/>
+                            <GridViewColumn Width="200" Header="Genre"  DisplayMemberBinding="{Binding Path=Genre}"/>
+                            <GridViewColumn Width="100" Header="Durée" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{}{0} : {1}">
+                                                    <Binding Path="TimeT.Min" />
+                                                    <Binding Path="TimeT.Sec" />
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="200" Header="Piste"  DisplayMemberBinding="{Binding Path=TrackNumber}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Border>
+            <Border  Grid.Row="2" Grid.ColumnSpan="3" Background="{DynamicResource PlayerColor}" Style="{StaticResource BorderGen}">
+                <StackPanel >
+                    <Label Name="timeState" Content="Aucune lecture en cours..." HorizontalContentAlignment="Center" Margin="-78,5,5,5" FontFamily="DejaVu Sans" FontSize="14" Foreground="#DDFFFFFF" Height="23" />
+                    <WrapPanel HorizontalAlignment="Center" Margin="0,-3,0,0">
+                        <Image Name="playButton" Source="ImagesPlayer\play.png" Height="38" MouseUp="btnPlay_Click" Margin="0,0,12,0" />
+                        <Image Name="PauseButton" Margin="5,0" Source="ImagesPlayer\pause.png" Height="38" MouseUp="btnPause_Click" />
+                        <Image Name="btnStop" Source="ImagesPlayer\stop.ico" MouseUp="btnStop_Click" Height="38" Margin="16,0,0,0"/>
+                        <StackPanel Margin="-19,0,0,0" Width="136">
+                            <Slider Name="volumeSlider" Minimum="0" Maximum="1" Value="0.8" Foreground="{DynamicResource AddButtonAlbumBlue}" Margin="45,0,-73,0" ValueChanged="ChangeMediaVolume"/>
+                            <TextBlock Margin="65,-2,-50,0" FontFamily="DejaVu Sans" Foreground="White" FontSize="16" TextAlignment="Center"><Run Text="Vol"/><Run Text="ume"/></TextBlock>
 
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button x:Name="Gerer_album" Content="Ajouter un&#xA;Album" Grid.Row="2" Grid.Column="0" Background="#FF674EA7" Foreground="#FFD3B219" FontSize="16" FontFamily="Rockwell Extra Bold"  TextOptions.TextFormattingMode="Display"  />
-        <Button x:Name="Ajout_morceau" Content="Ajouter un nouveau morceau" Grid.Row="2" Grid.Column="2" FontFamily="Rockwell Extra Bold" FontSize="16" Foreground="#FF631616" Click="AddTrack_Click" Background="#FFF1C232" />
-        <Button Content="Sauvegarder" Grid.Column="1" Grid.Row="2" Background="#FFE06666" FontFamily="Rockwell Extra Bold" FontSize="16" Foreground="#FF184C70"/>
+                        </StackPanel>
 
-    </Grid>
+                    </WrapPanel>
+                </StackPanel>
+            </Border>
+            <Button x:Name="Ajout_morceau"  Grid.Row="3" Grid.ColumnSpan="2" FontFamily="DejaVu Sans" FontSize="17" Foreground="White" Click="AddTrack_Click" Background="{StaticResource AddColor}" Height="Auto" Grid.Column="1" Margin="0.333,0,0,0" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock TextWrapping="Wrap" Text="Ajouter un nouveau morceau" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4"/>
+                    <Image Source="ImageButton/add_red.png" Height="45" Margin="0,0,-83,0" />
+                </StackPanel>
+            </Button>
+            <Button  Content="Supprimer le morceau" Grid.Row="3" Background="{StaticResource SuppressColor}" Height="Auto" Grid.ColumnSpan="2" Click="Track_Removed" FontSize="17" FontFamily="DejaVu Sans" Margin="0,0,232.333,0"/>
+
+        </Grid>
+    </Border>
 </UserControl>

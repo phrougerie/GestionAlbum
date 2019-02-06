@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +24,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         public string Genre { get; internal set; }
         [DataMember]
         public int Year { get; internal set; }
-
+        [DataMember]
+        public int TrackNumber { get; internal set; }
+        [DataMember]
+        public string Music { get; internal set; }
 
         /// <summary>
         /// 
@@ -36,19 +39,27 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         /// <param name="album"></param>
         /// <param name="genre"></param>
         /// <param name="year"></param>
-        public Track(string title, int min,int sec, string artist, string album, string genre, int year)
+        public Track(string title, int min, int sec, string artist, string album, string genre, int year, int tracknumber):this(title,min,sec,artist,album,genre,year,tracknumber,"unknown")
         {
-            
+
+        }
+
+        public Track(string title, int min, int sec, string artist, string album, string genre, int year,int tracknumber,string music)
+        {
+
             Title = title;
             TimeT = new Time(min, sec);
             Artist = artist;
             Album = album;
             Genre = genre;
             Year = year;
+            TrackNumber = tracknumber;
+            Music = music;
         }
+        
 
         /// <summary>
-        /// 
+        /// Checks if a track is the same as an other one.
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
@@ -65,7 +76,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.models
         }
 
         /// <summary>
-        /// 
+        /// Returns an hashcode.
         /// </summary>
         /// <returns></returns>
         public override int GetHashCode()

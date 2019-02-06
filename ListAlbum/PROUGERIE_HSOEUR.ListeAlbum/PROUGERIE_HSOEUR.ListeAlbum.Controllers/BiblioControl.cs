@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using LibraryALbumClass;
 using PROUGERIE_HSOEUR.ListeAlbum.persistance;
+using System.Collections.ObjectModel;
 
 namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
 {
@@ -25,7 +26,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
 
         
         /// <summary>
-        /// 
+        /// Starts the app.
         /// </summary>
         public void Start()
         {
@@ -36,11 +37,11 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
             var serdes = new PersistanceXml();
             var library = new LibraryAlbum();
             var al1 = new Album("12345", "Black album", "Metallica", "Trash", 1991);
-            var m1 = new Track("Nothing else matter", 5, 10, "Metallica", "Black album", "Power ballad", 1991);
+            var m1 = new Track("Nothing else matter", 5, 10, "Metallica", "Black album", "Power ballad", 1991,1);
             
             var al2 = new Album("12346", "Ok Computer", "Radiohead", "Art rock", 1997);
-            var m2 = new Track("Karma Police", 4, 33, "Radiohead", "Ok Computer", "Rock", 1997);
-            var m3 = new Track("Exit music(for a film)", 5, 22, "Radiohead", "Ok Computer", "Rock", 1997);
+            var m2 = new Track("Karma Police", 4, 33, "Radiohead", "Ok Computer", "Rock", 1997,1);
+            var m3 = new Track("Exit music(for a film)", 5, 22, "Radiohead", "Ok Computer", "Rock", 1997,1);
             al1.AddTrack(m1);
             al2.AddTrack(m2);
             al2.AddTrack(m3);
@@ -89,7 +90,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
                         break;
                     // ok
                     case 8:
-                        library=serdes.Deserialize();
+                        library=new LibraryAlbum (serdes.Deserialize());
                         break;
                     //pas ok
                     case 9:
@@ -117,7 +118,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
 
         }
         /// <summary>
-        /// 
+        /// Diplays therAlbum that has been choosen.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="library"></param>
@@ -137,7 +138,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Allows you to choose by what you want to sort your library.
         /// </summary>
         /// <param name="library"></param>
         private void ListBy(LibraryAlbum library)
@@ -168,7 +169,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Allows you to choose by what you want to sort your playlist.
         /// </summary>
         /// <param name="list"></param>
         private void PlayListSorting(Playlist list)
@@ -194,7 +195,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
 
 
         /// <summary>
-        /// 
+        /// Add a track in your playlist.
         /// </summary>
         /// <param name="library"></param>
         /// <param name="playlist"></param>
@@ -219,7 +220,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Add a track in your librairy.
         /// </summary>
         /// <param name="library"></param>
         private void AddTrackLib(LibraryAlbum library)
@@ -256,7 +257,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Delete a track in an album in your librairy.
         /// </summary>
         /// <param name="library"></param>
         private void DeleteTrackLib(LibraryAlbum library)
@@ -275,7 +276,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Allows you to diplay how many album you want.
         /// </summary>
         /// <param name="library"></param>
         private void ViewAlbum(LibraryAlbum library)
@@ -291,7 +292,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Allows you to create an album.
         /// </summary>
         /// <param name="library"></param>
         private void CreateAlbum(LibraryAlbum library)
@@ -316,7 +317,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Delete an album in your librairy.
         /// </summary>
         /// <param name="library"></param>
         private void DeleteAlb(LibraryAlbum library)
@@ -333,7 +334,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
             } while (conf == 1);
         }
         /// <summary>
-        /// 
+        /// Display all the albums.
         /// </summary>
         /// <param name="library"></param>
         private void DisplayListAlbum(LibraryAlbum library)
@@ -346,7 +347,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Allows you to change the properties of an album.
         /// </summary>
         /// <param name="library"></param>
         private void UpdateAlbum(LibraryAlbum library)
@@ -378,10 +379,10 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
             } while (conf == 1);
         }
         /// <summary>
-        /// 
+        /// Display your playlist.
         /// </summary>
         /// <param name="listTrack"></param>
-        private void DisplayList(List<Track> listTrack)
+        private void DisplayList(ObservableCollection<Track> listTrack)
         {
             foreach (var track in listTrack)
             {
@@ -391,7 +392,7 @@ namespace PROUGERIE_HSOEUR.ListeAlbum.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Display your playlist.
         /// </summary>
         /// <param name="playlist"></param>
         private void DisplayPlaylist(Playlist playlist)

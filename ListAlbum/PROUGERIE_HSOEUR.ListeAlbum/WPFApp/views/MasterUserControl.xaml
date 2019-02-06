@@ -5,31 +5,49 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFApp.views" x:Name="root"
              mc:Ignorable="d" MinWidth="250" MinHeight="585">
+    <Border Style="{StaticResource BorderGen}">
+        <Grid MinHeight="585" Background="#FFFFE599">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="34*"/>
+                <RowDefinition Height="36*"/>
+
+                <RowDefinition Height="359*"/>
+                <RowDefinition Height="57*"/>
+                <RowDefinition Height="99*"/>
+            </Grid.RowDefinitions>
+
+            <DockPanel Grid.Row="0" Grid.ColumnSpan="2" Background="{StaticResource TitreMaster}" Grid.RowSpan="2">
+                <TextBlock   Background="{StaticResource TitreMaster}" Text="Albums et Artistes" FontSize="22" TextAlignment="Center" Foreground="#FFCBBD30"  FontFamily="DejaVu Sans Condensed" Height="22"  VerticalAlignment="Center"/>
+            </DockPanel>
+            
     
-    <Grid MinHeight="585">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="18*"/>
-            <RowDefinition Height="3*"/>
-        </Grid.RowDefinitions>
+            <ListView  Name="AlbumListView" SelectedItem="{Binding SelectedAlbum,ElementName=root}" ItemsSource="{Binding LAlbum.ListAlbum,ElementName=root}"  Grid.Row="2" FontFamily="DejaVu Sans" FontSize="20" Grid.ColumnSpan="2" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" Foreground="#DD000000"  >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="175" Header="Titre" DisplayMemberBinding="{Binding Path=Title}"/>
 
-        <TextBlock Grid.Row="0" Background="#FF45818E" Text="Album et artist" FontSize="18" TextAlignment="Center" Foreground="#FFCBBD30"/>
-
-
-        <ListView  Name="AlbumListView" SelectedItem="{Binding SelectedAlbum,ElementName=root}" ItemsSource="{Binding LAlbum.ListAlbum,ElementName=root,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Grid.Row="1" Background="#FFFFE599" FontFamily="ArialBlack" FontSize="16"  >
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Width="150" Header="Titre" DisplayMemberBinding="{Binding Path=Title}"/>
-                    <GridViewColumn Width="150" Header="Artiste" DisplayMemberBinding="{Binding Path=Artist}"/>
-                </GridView>
-            </ListView.View>
-
-
-        </ListView>
-
-        <Button x:Name="button" Grid.Row="2" Content="Ajouter un album" Background="#FF45818E" Click="NewAlbumAdded"/>
-
-    </Grid>
-
+                        <GridViewColumn Width="175" Header="Artiste" DisplayMemberBinding="{Binding Path=Artist}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button Grid.Row="3" Content="Supprimer un Album" Grid.ColumnSpan="2" Height="Auto" Background="{StaticResource SuppressColor}" Click="OnTrackRemoved" FontFamily="DejaVu Sans" FontSize="17"/>
+            <Button x:Name="Button_Add_Al" Grid.Row="4" Grid.Column="0"  Background="{StaticResource AddColor}" Click="NewAlbumAdded" Height="Auto" FontFamily="DejaVu Sans" FontSize="17">
+                <StackPanel>
+                    <TextBlock TextWrapping="Wrap" Text="Ajouter un album" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4"/>
+                    <Image Source="ImageButton/add_red.png" Height="50" />
+                </StackPanel>
+            </Button>
+            <Button   x:Name="button_Save" Grid.Row="4" Grid.Column="1"  Background="{StaticResource SaveColor}" Click="On_Saved" Height="Auto" FontFamily="DejaVu Sans" FontSize="17">
+                <StackPanel>
+                    <TextBlock Text="Sauvegarder" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4"/>
+                    <Image Source="ImageButton/Save-icon.png" Height="50"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Border>
 </UserControl>
 
